@@ -1,0 +1,37 @@
+export const Style = {
+  addLogoContainer: {
+    clip: "rect(0 0 0 0)",
+    clipPath: "inset(50%)",
+    height: 1,
+    overflow: "hidden",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    whiteSpace: "nowrap",
+    width: 1,
+  },
+  addLogoBtn: {
+    mt: { xs: "10px", md: 0 },
+    display: "flex",
+    flexDirection: "column",
+    height: "100px",
+    width: "150px",
+    textAlign: "center",
+    fontSize: "12px",
+    fontFamily: "sans-serif",
+    textTransform: "capitalize",
+    backgroundColor: "lightgray",
+    opacity: "0.6",
+  },
+  topBannerContent2: {
+    color: '#4B4B4B',
+    fontFamily: 'Rubik',
+    fontSize: '18px',
+    fontWeight: '400',
+    lineHeight: '30px',
+    minHeight: '30px',
+  maxWidth:  '100%',
+    whiteSpace: 'break-space',
+    wordBreak: 'normal'
+  },
+};

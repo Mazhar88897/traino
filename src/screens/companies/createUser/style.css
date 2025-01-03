@@ -1,0 +1,77 @@
+.react-tel-input {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  border: 1px solid #EEE;
+  border-radius: 5px;
+  width: 100%;
+  overflow: visible !important;
+}
+.react-tel-input:focus-within {
+  border: 1px solid #4156F9 !important;
+}
+.special-label{
+  display: none;
+}
+.country{
+  &:hover{
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+}
+.highlight {
+    background-color: rgba(51, 70, 211, 0.9) !important;
+    color: white !important;
+    &:hover, .dial-code:hover{
+      background-color: rgb(51, 70, 211) !important;
+      color: white !important;
+    }
+    .dial-code{
+      color: white !important;
+    }
+}
+.country-list {
+    width: 200px;
+    height: 160px;
+    overflow: scroll;
+    margin-top: -3px !important;
+    padding: 34px 0 6px 10px;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+}
+
+.flag-dropdown {
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  position: static !important;
+  border: 0 !important;
+}
+
+.search{
+  position: relative !important;
+  height: 40px;
+}
+
+.search-box{
+  margin: 0 !important;
+}
+
+.form-control {
+  padding: 10px !important;
+}
+
+.selected-flag {
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
+  padding: 8px !important;
+  width: 46px;
+  height: 46px;
+  outline: none;
+  color: black;
+
+}
+@media (max-width: 600px) {
+    .country-list {
+      width: calc(100% - 35px) !important;
+    }
+  }

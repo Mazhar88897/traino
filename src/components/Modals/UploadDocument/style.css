@@ -1,0 +1,12 @@
+textarea::placeholder {
+    color: #9A9A9A;
+    font-family: "Rubik";
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    word-spacing: 1px;
+}
+textarea:focus {
+    border-color: #4156F9 !important;
+    border-width: 1px !important;
+}

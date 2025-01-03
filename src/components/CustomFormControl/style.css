@@ -1,0 +1,17 @@
+.MuiPaper-root {
+    border-radius: 0px 0px 7px 7px !important;
+}
+.MuiMenu-list {
+    padding: 3px 4px 4px !important;
+}
+
+.Mui-selected {
+    border-radius: 2px !important;
+    background-color: #6A7CFF !important;
+    color: #FFF !important;
+}
+
+.MuiSelect-outlined.Mui-focused {
+    border-color: transparent !important;
+    outline: none !important;
+}
