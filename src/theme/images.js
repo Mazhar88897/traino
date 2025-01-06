@@ -82,6 +82,7 @@ import superAdminProgress from "../assets/superAdminProgress.png";
 import allTeamAvatar from "../assets/all_team_avatar.png";
 import techLogo from "../assets/techLogo.png";
 import firstTrainingCard from "../assets/firstTrainingCard.png";
+import StopWatch from "../assets/Stopwatch.png";
 
 const IMAGES = {
   training1,
@@ -167,6 +168,7 @@ const IMAGES = {
   superAdminProgress,
   allTeamAvatar,
   techLogo,
-  firstTrainingCard
+  firstTrainingCard,
+  StopWatch,
 };
 export { IMAGES };

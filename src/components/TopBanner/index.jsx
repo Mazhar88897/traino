@@ -1,6 +1,6 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import MenuIcon from "@mui/icons-material/Menu";
+// import MenuIcon from "@mui/icons-material/Menu";
 import { Box, styled, Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
@@ -15,7 +15,12 @@ import { IMAGES } from "../../theme";
 import LogoutModal from "../Modals/Logout";
 import { Style } from "./style";
 
-const TopBanner = ({ heading, headingNavigation, headingData, isDashboard }) => {
+const TopBanner = ({
+  heading,
+  headingNavigation,
+  headingData,
+  isDashboard,
+}) => {
   const { first_name, last_name, role } = useSelector(selectUser);
   const name = first_name + " " + last_name;
   const [openLogoutModal, setOpenLogoutModal] = useState(false);
@@ -23,7 +28,7 @@ const TopBanner = ({ heading, headingNavigation, headingData, isDashboard }) => 
   const [scrollX, setScrollX] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { drawer } = useSelector(selectdrawer)
+  const { drawer } = useSelector(selectdrawer);
   const openDrawer = () => {
     dispatch(updateDrawer({ drawer: true }));
   };
@@ -59,7 +64,8 @@ const TopBanner = ({ heading, headingNavigation, headingData, isDashboard }) => 
           onClick={openDrawer}
           display={Style.menuIconContainer}
         >
-          <MenuIcon sx={Style.menuIcon} />
+          <Box component={"img"} src={IMAGES.logo} sx={Style.menuIcon} />
+          {/* <MenuIcon sx={Style.menuIcon} /> */}
         </Box>
         <Box sx={Style.pageIconContainer}>
           <Typography
@@ -102,8 +108,8 @@ const TopBanner = ({ heading, headingNavigation, headingData, isDashboard }) => 
                     key={index}
                     component={"span"}
                     sx={{
-                      my: 'auto',
-                      fontSize: {xs: '16px', sm: '18px', md: "20px"},
+                      my: "auto",
+                      fontSize: { xs: "16px", sm: "18px", md: "20px" },
                       fontFamily: "Rubik",
                       fontWeight:
                         index !== headingData?.length - 1 ? "400" : "500",
@@ -114,7 +120,7 @@ const TopBanner = ({ heading, headingNavigation, headingData, isDashboard }) => 
                         index !== headingData?.length - 1
                           ? "pointer"
                           : "default",
-                      minWidth: '140px'
+                      minWidth: "140px",
                     }}
                     onClick={item?.handleNavigate}
                   >

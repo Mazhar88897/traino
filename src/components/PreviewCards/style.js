@@ -219,6 +219,7 @@ export const Style = {
     color: "#3447D4",
     fontSize: "14px",
     fontWeight: "400",
+    pl: "8px",
     lineHeight: "16.59px",
   },
   center: {
@@ -257,6 +258,22 @@ export const Style = {
     pl: "3px",
     color: "black",
   },
+  bgAssignButtonComplete: {
+    // Position it relative to the nearest positioned ancestor
+
+    fontFamily: "Rubik",
+    display: "flex",
+    background: "#26B56F",
+    borderRadius: "4px",
+
+    fontSize: { xs: "11px", sm: "12px" },
+    lineHeight: "14.22px",
+    fontWeight: "500",
+    padding: "5px 9px",
+    "&:hover": {
+      background: "rgb(220, 220, 220)",
+    },
+  },
 
   assignblue: {
     lineHeight: "14.22px",
@@ -264,6 +281,14 @@ export const Style = {
     fontFamily: "Rubik",
     pl: "3px",
     color: "#3447D4",
+  },
+  assignWhite: {
+    lineHeight: "14.22px",
+    fontSize: "12px",
+    fontFamily: "Rubik",
+    pl: "3px",
+    fontWeight: "500",
+    color: "White",
   },
   assignButtonContainer: {
     fontFamily: "Rubik",
@@ -280,5 +305,13 @@ export const Style = {
     fontWeight: "400",
     // background: "white",
     padding: "3px 10px",
+  },
+  StopWatch: {
+    width: "16px",
+  },
+  stopbox: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 };

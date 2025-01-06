@@ -496,6 +496,7 @@ const TrainingDocuments = () => {
                 {documentsData?.results?.map((val, index) => (
                   <PreviewCards
                     isProgressBar={presentTab === 2}
+                    isCompleted={presentTab === 3}
                     key={index}
                     data={val}
                     handleClick={(event) => {

@@ -52,6 +52,7 @@ const PreviewCards = ({
   index,
   isProgressBar,
   assignClickHandling,
+  isCompleted,
 }) => {
   const { departId, id } = useParams();
   const location = useLocation();
@@ -231,11 +232,24 @@ const PreviewCards = ({
             />
           </Box>
           <Box sx={Style.assignButtonContainer}>
+            {!isCompleted ? (
+              <Box sx={Style.bgAssignButton}>
+                <Typography sx={Style.assignBlack}> Due Date: </Typography>
+                <Typography sx={Style.assignblue}>{dateShown}</Typography>
+                {/* <Typography sx={Style.date}>{dateShow}</Typography> */}
+              </Box>
+            ) : (
+              <Box sx={Style.bgAssignButtonComplete}>
+                <Typography sx={Style.assignWhite}>Completed</Typography>
+              </Box>
+            )}
+            {/*
             <Box sx={Style.bgAssignButton}>
-              <Typography sx={Style.assignBlack}> Due Date: </Typography>
-              <Typography sx={Style.assignblue}>{dateShown}</Typography>
-              {/* <Typography sx={Style.date}>{dateShow}</Typography> */}
-            </Box>
+               <Typography sx={Style.assignBlack}> Due Date: </Typography>
+               <Typography sx={Style.assignblue}>{dateShown}</Typography>
+              <Typography sx={Style.date}>{dateShow}</Typography> 
+             
+            </Box> */}
           </Box>
 
           <CardContent style={Style.contentBox(path === "trainings" || isUser)}>
@@ -369,7 +383,14 @@ const PreviewCards = ({
                     <Typography sx={Style.estimatedtimetext}>
                       Estimated Completion Time
                     </Typography>
-                    <Typography sx={Style.clocktext}>45 mins</Typography>
+                    <Box sx={Style.stopbox}>
+                      <Box
+                        component={"img"}
+                        src={IMAGES.StopWatch}
+                        sx={Style.StopWatch}
+                      />
+                      <Typography sx={Style.clocktext}>45 mins</Typography>
+                    </Box>
                   </Box>
 
                   {isProgressBar && (
