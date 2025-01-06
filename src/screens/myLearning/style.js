@@ -17,12 +17,13 @@ export const Style = {
     gap: "33px 23px",
     flexWrap: "wrap",
     justifyContent: {
-      xs: width < 450 ? "center" : "start",
+      xs: width < 400 ? "center" : "start",
       sm: !!isDrawer && width < 712 ? "center" : "start",
       md: isUser && width < 931 ? "center" : "start",
       lg: "start",
     },
-    maxWidth: { md: isUser ? "calc(100% - 200px)" : "100%" },
+    // maxWidth: { md: isUser ? "calc(100% - 200px)" : "100%" },
+    maxWidth: "100%",
   }),
   bgWrapper: {
     display: "flex",

@@ -134,7 +134,7 @@ const DrawerChildren = ({ open, setOpenEditModal, setOpenLogoutModal }) => {
                   display: "block",
                   background: activeColor(path, "#6A7CFF"),
                   color: activeColor(path, "#fff"),
-                  borderRadius: "4px",
+                  borderRadius: "8px",
                   width: !open ? "52px" : "auto",
                   height: !open ? "52px" : "auto",
                   ml: !open && "14px",
@@ -153,8 +153,8 @@ const DrawerChildren = ({ open, setOpenEditModal, setOpenLogoutModal }) => {
                       src={activeColor(path, successIcon) || icon}
                       alt="icon"
                       sx={{
-                        height: { xs: "26px", xl: "32px" },
-                        width: { xs: "30px", xl: "32px" },
+                        height: "24px",
+                        width: "24px",
                       }}
                     />
                   </ListItemIcon>
@@ -162,7 +162,8 @@ const DrawerChildren = ({ open, setOpenEditModal, setOpenLogoutModal }) => {
                     primaryTypographyProps={{
                       fontFamily: "Rubik",
                       fontWeight: activeColor(path, 500) || 400,
-                      fontSize: width > 1535 ? 19 : 16,
+                      // fontSize: width > 1535 ? 19 : 16,
+                      fontSize: 16,
                     }}
                     primary={title}
                     sx={{ opacity: open ? 1 : 0 }}
@@ -180,7 +181,8 @@ const DrawerChildren = ({ open, setOpenEditModal, setOpenLogoutModal }) => {
         >
           <Box
             component={"img"}
-            width={width > 1535 ? 32 : 24}
+            // width={width > 1535 ? 32 : 24}
+            width={24}
             src={
               pathname == "dashboard" ? IMAGES.dashboard1 : IMAGES.dashboard2
             }
@@ -195,7 +197,8 @@ const DrawerChildren = ({ open, setOpenEditModal, setOpenLogoutModal }) => {
         <Box sx={Style.signoutContainer(pathname == "support", open)}>
           <Box
             component={"img"}
-            width={width > 1535 ? 32 : 24}
+            // width={width > 1535 ? 32 : 24}
+            width={24}
             src={IMAGES.support}
           />
           <Typography
@@ -211,7 +214,8 @@ const DrawerChildren = ({ open, setOpenEditModal, setOpenLogoutModal }) => {
         >
           <Box
             component={"img"}
-            width={width > 1535 ? 32 : 24}
+            // width={width > 1535 ? 32 : 24}
+            width={24}
             src={
               pathname == "settings" ? IMAGES.settingsWhiteIcon : IMAGES.setting
             }

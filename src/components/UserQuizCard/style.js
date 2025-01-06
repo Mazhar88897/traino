@@ -7,9 +7,9 @@ export const Style = {
     flexDirection: "column",
     justifyContent: "space-around",
     textAlign: "center",
-    minWidth: "180px",
+    minWidth: "145px",
     width: {
-      xs: width < 450 ? "100%" : "calc(50% - 12px)",
+      xs: width < 450 ? "50%" : "calc(50% - 12px)",
       sm:
         !isDrawer && width > 750
           ? "calc(33% - 14px)"

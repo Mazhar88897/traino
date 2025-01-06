@@ -136,6 +136,20 @@ export const Style = {
       backgroundColor: "#F8F8F8",
     },
   },
+  menuListName: {
+    display: { sm: "none", lg: "none", xl: "none" },
+    px: "3px",
+    py: "6px",
+    color: "#1F1F1F",
+    fontFamily: "Rubik",
+    fontSize: "14px",
+    fontWeight: "400",
+    cursor: "pointer",
+    opacity: "0.7",
+    "&:hover": {
+      backgroundColor: "#F8F8F8",
+    },
+  },
   userNameContainer: { display: "flex", alignItems: "center", gap: "8px" },
   editIcon: {
     cursor: "pointer",

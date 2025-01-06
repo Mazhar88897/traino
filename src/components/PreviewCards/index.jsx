@@ -371,7 +371,20 @@ const PreviewCards = ({
                       }`}
                     </Typography> */}
                   </Typography>
+                  <Box sx={{ mt: 2 }}>
+                    {isProgressBar && (
+                      <Box sx={{ ...Style.spaceBetweenBar }}>
+                        <ProgressBar
+                          sx={{ mt: "1px" }}
+                          dots={width > 900 ? 11 : width > 600 ? 10 : 9}
+                        />
 
+                        <Typography sx={Style.progressBarRatio}>
+                          02/04
+                        </Typography>
+                      </Box>
+                    )}
+                  </Box>
                   <Box
                     sx={{
                       width: "100%",
@@ -392,15 +405,6 @@ const PreviewCards = ({
                       <Typography sx={Style.clocktext}>45 mins</Typography>
                     </Box>
                   </Box>
-
-                  {isProgressBar && (
-                    <Box sx={{ ...Style.spaceBetween, mt: 1.5 }}>
-                      <ProgressBar
-                        dots={width > 900 ? 11 : width > 600 ? 10 : 9}
-                      />
-                      <Typography sx={Style.progressRatio}>02/04</Typography>
-                    </Box>
-                  )}
                 </>
               )}
             </Box>

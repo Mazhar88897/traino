@@ -186,8 +186,18 @@ export const Style = {
   },
   spaceBetween: {
     display: "flex",
+    // alighn:
     // justifyContent: "center",
     alignItems: "left",
+    mr: 0.5,
+  },
+
+  spaceBetweenBar: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    // justifyContent: "center",
+    // alignItems: "left",
     mr: 0.5,
   },
   quizNo: {
@@ -202,7 +212,7 @@ export const Style = {
     fontSize: "12px",
     fontWeight: "400",
     lineHeight: "30px",
-    mr: "10px",
+    mr: "5px",
     color: "#3447D4",
     padding: "0px 12px",
     background: "#E9EFFD80",
@@ -217,10 +227,11 @@ export const Style = {
   clocktext: {
     fontFamily: "Rubik",
     color: "#3447D4",
-    fontSize: "14px",
-    fontWeight: "400",
+
     pl: "8px",
     lineHeight: "16.59px",
+    fontSize: "14px",
+    fontWeight: "400",
   },
   center: {
     width: "100%",
@@ -234,7 +245,13 @@ export const Style = {
     fontSize: "16px",
     fontWeight: "400",
   },
-
+  progressBarRatio: {
+    color: "#1F1F1F",
+    fontFamily: "Rubik",
+    lineHeight: "16.59px",
+    fontSize: "14px",
+    fontWeight: "400",
+  },
   bgAssignButton: {
     // Position it relative to the nearest positioned ancestor
 

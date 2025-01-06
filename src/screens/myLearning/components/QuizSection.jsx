@@ -173,7 +173,7 @@ const QuizSection = ({ loader }) => {
               loader={deleteloader}
             />
           </Box>
-          {isUser && (
+          {/* {isUser && (
             <Box sx={Style.cupMain}>
               <Typography sx={Style.myScore}>My Score</Typography>
               <Box sx={Style.quizAttemptDetail}>
@@ -186,7 +186,7 @@ const QuizSection = ({ loader }) => {
               <Typography sx={Style.score}>750</Typography>
               <Typography sx={Style.scoreTitle}>Total Points</Typography>
             </Box>
-          )}
+          )} */}
           <QuizResult open={open} setOpen={setOpen} data={data} />
         </Box>
       )}

@@ -48,7 +48,7 @@ export const Style = {
   leftContainerContent: {
     maxWidth: "320px",
     wordBreak: "break-word",
-    height: "150px",
+    minHeight: "150px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -61,16 +61,17 @@ export const Style = {
   heading: {
     color: "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: { xs: "26px", sm: "28px", xl: "32px" },
+    fontSize: { xs: "26px", sm: "28px", lg: "28px", xl: "32px" },
     fontWeight: "500",
+    lineHeight: "33.18px",
   },
   content: {
     color: "#4B4B4B",
     textAlign: "center",
     fontFamily: "Rubik",
-    fontSize: { xs: "16px", sm: "18px", xl: "20px" },
+    fontSize: { xs: "16px", sm: "18px", lg: "18px", xl: "20px" },
     fontWeight: "400",
     lineHeight: "30px",
-    mt: 1,
+    mt: 2,
   },
 };

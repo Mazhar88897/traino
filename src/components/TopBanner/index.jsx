@@ -1,6 +1,6 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-// import MenuIcon from "@mui/icons-material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
 import { Box, styled, Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
@@ -64,8 +64,8 @@ const TopBanner = ({
           onClick={openDrawer}
           display={Style.menuIconContainer}
         >
-          <Box component={"img"} src={IMAGES.logo} sx={Style.menuIcon} />
-          {/* <MenuIcon sx={Style.menuIcon} /> */}
+          {/* <Box component={"img"} src={IMAGES.logo} sx={Style.menuIcon} /> */}
+          <MenuIcon sx={Style.menuIcon} />
         </Box>
         <Box sx={Style.pageIconContainer}>
           <Typography
@@ -109,7 +109,10 @@ const TopBanner = ({
                     component={"span"}
                     sx={{
                       my: "auto",
-                      fontSize: { xs: "16px", sm: "18px", md: "20px" },
+                      fontSize:
+                        index !== headingData?.length - 1
+                          ? { xs: "16px", sm: "18px", md: "20px" }
+                          : { xs: "18px", sm: "20px", md: "22px" },
                       fontFamily: "Rubik",
                       fontWeight:
                         index !== headingData?.length - 1 ? "400" : "500",
@@ -193,6 +196,7 @@ const TopBanner = ({
             {isOpenPopover && (
               <>
                 <Box sx={Style.menu}>
+                  <Typography sx={Style.menuListName}>{name}</Typography>
                   <Typography sx={Style.menuList} onClick={editProfile}>
                     Edit Profile
                   </Typography>

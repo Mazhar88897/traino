@@ -22,7 +22,7 @@ const AddSummaryKeyPoints = ({ handleClick }) => {
             Highlight the key benefits of your training to engage participants
           </Typography>
           <CustomButton
-            sx={{ width: "299px", mt: 3, Height: "44px" }}
+            sx={{ width: "299px", mt: 3, minHeight: "44px" }}
             buttonText={`Generate Quiz`}
             onClick={handleClick}
           />

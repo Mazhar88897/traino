@@ -4,7 +4,7 @@ export const Style = {
   container: (isFull, isDarkBg) => ({
     display: "flex",
     justifyContent: "space-between",
-    px: isFull ? 0 : {xs: "8px", sm: "16px"},
+    px: isFull ? 0 : { xs: "8px", sm: "16px" },
     py: "16px",
     pt: !isFull ? "16px" : 0,
     boxSizing: "border-box",
@@ -24,9 +24,10 @@ export const Style = {
     color: "#3346D3",
   },
   listItemBtnContainer: (open, bgCol) => ({
-    minHeight: 48,
+    minHeight: 44,
     justifyContent: open ? "initial" : "center",
     px: 2.5,
+    // mx: 1,
     borderRadius: "4px",
     "&:hover": {
       background: bgCol ? bgCol : "#fff",
@@ -44,10 +45,11 @@ export const Style = {
     alignItems: "center",
     justifyContent: !open && "center",
     color: "white",
-    height: 40,
-    borderRadius: "4px",
+    height: 44,
+    borderRadius: "8px",
     mt: 1.5,
-    px: 2.5,
+
+    px: 2.75,
     cursor: "pointer",
   }),
   signoutText: (path) => ({
@@ -57,11 +59,11 @@ export const Style = {
     justifyContent: "center",
     cursor: "pointer",
     fontFamily: "Rubik",
-    fontSize: { xs: "16px", xl: "18px" },
+    fontSize: { xs: "14px", xl: "16px" },
     fontStyle: "normal",
-    fontWeight: path ? '500' : '400',
+    fontWeight: path ? "500" : "400",
     fontWeight: "400",
-    lineHeight: "20px",
+    lineHeight: "22px",
     letterSpacing: "-0.32px",
   }),
   logoContainer: {
@@ -73,7 +75,7 @@ export const Style = {
     borderBottom: "1px solid rgb(230, 230, 230)",
     m: "0 20px",
   },
-  logo: (isDrawerOpen=false) => ({
+  logo: (isDrawerOpen = false) => ({
     width: { xs: "54px", xl: isDrawerOpen ? "80px" : "54px" },
     height: { xs: "44px", xl: isDrawerOpen ? "54px" : "44px" },
   }),
@@ -88,22 +90,28 @@ export const Style = {
     display: "flex",
     flexDirection: "column",
     marginLeft: "auto",
-    pr: isFull ? 0 : { xs: isLowPad && 0, sm: isLowPad && 0, md: isLowPad && 0, xl: 1.5 },
+    pr: isFull
+      ? 0
+      : { xs: isLowPad && 0, sm: isLowPad && 0, md: isLowPad && 0, xl: 1.5 },
     pl: isFull ? 0 : isLowPad && { xs: 0, sm: 2, md: 1.5, xl: 4.75 },
-    px: isFull ? 0 : !isLowPad && { xs: 1, sm: "10px", md: "20px", xl: '40px' },
+    px: isFull ? 0 : !isLowPad && { xs: 1, sm: "10px", md: "20px", xl: "40px" },
     width: {
       xs: "100%",
       sm: isFull
         ? "100%"
         : isDrawerOpen
-          ? "calc(100% - 276px)"
-          : "calc(100% - 96px)",
+        ? "calc(100% - 276px)"
+        : "calc(100% - 96px)",
       md: isFull
         ? "100%"
         : isDrawerOpen
-          ? "calc(100% - 276px)"
-          : "calc(100% - 96px)",
-      xl: isFull ? "100%" : !isDrawerOpen ? "calc(100% - 85px)" : `calc(100% - ${width}px)`,
+        ? "calc(100% - 276px)"
+        : "calc(100% - 96px)",
+      xl: isFull
+        ? "100%"
+        : !isDrawerOpen
+        ? "calc(100% - 85px)"
+        : `calc(100% - ${width}px)`,
     },
     zIndex: 11,
   }),
