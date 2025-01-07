@@ -7,26 +7,27 @@ export const Style = {
     flexDirection: "column",
     justifyContent: "space-around",
     textAlign: "center",
-    minWidth: "145px",
-    width: {
-      xs: width < 450 ? "50%" : "calc(50% - 12px)",
-      sm:
-        !isDrawer && width > 750
-          ? "calc(33% - 14px)"
-          : isDrawer && width < 712
-          ? "100%"
-          : "calc(50% - 12px)",
-      md:
-        !isDrawer && width > 1050
-          ? "calc(25% - 18px)"
-          : isDrawer && width < 1000
-          ? "calc(50% - 12px)"
-          : "calc(33% - 14px)",
-      lg: !isDrawer && width > 1250 ? "calc(20% - 19px)" : "calc(25% - 18px)",
-      xl: "calc(20% - 19px)",
-    },
-    maxWidth: "300px",
-    height: "160px",
+    // minWidth: "145px",
+    // width: {
+    //   xs: width < 450 ? "50%" : "calc(50% - 12px)",
+    //   sm:
+    //     !isDrawer && width > 750
+    //       ? "calc(33% - 14px)"
+    //       : isDrawer && width < 712
+    //       ? "100%"
+    //       : "calc(50% - 12px)",
+    //   md:
+    //     !isDrawer && width > 1050
+    //       ? "calc(25% - 18px)"
+    //       : isDrawer && width < 1000
+    //       ? "calc(50% - 12px)"
+    //       : "calc(33% - 14px)",
+    //   lg: !isDrawer && width > 1250 ? "calc(20% - 19px)" : "calc(25% - 18px)",
+    //   xl: "calc(20% - 19px)",
+    // },
+    // maxWidth: "300px",
+    height: { xs: "132.21px", sm: "157px", md: "157px", lg: "157px" },
+    width: { xs: "165px", sm: "196px", md: "196px", lg: "196px" },
     alignItems: "center",
     borderRadius: "10px",
     border: "2px dashed #B8C1FF",
@@ -83,17 +84,17 @@ export const Style = {
   subHeading: {
     mt: { xs: 1, sm: 1.25, lg: 1.25 },
     mb: { xs: 1, sm: 1, lg: 1 },
-    maxWidth: "190px",
+    // maxWidth: "90%",
     color: "#4156F9",
     textAlign: "center",
     fontFamily: "Rubik",
-    fontSize: { xs: "13px", sm: "14px" },
+    fontSize: { xs: "12px", sm: "14px" },
     fontWeight: "400",
-    lineHeight: "22px",
+    lineHeight: { xs: "18px", sm: "22px" },
   },
   nextIcon: {
     position: "absolute",
-    bottom: "-32px",
+    bottom: "-22px",
     left: "calc(50% - 22px)",
     background: "#FFAD0D",
     fill: "#fff",

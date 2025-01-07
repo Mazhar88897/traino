@@ -348,7 +348,7 @@ const PreviewCards = ({
                     <Typography
                       component={"span"}
                       sx={Style.linksOnPreviewCard}
-                      onClick={() => handleClick("quiz")}
+                      onClick={() => handleClick("quizzes")}
                     >
                       Quiz (02)
                     </Typography>
@@ -376,7 +376,7 @@ const PreviewCards = ({
                       <Box sx={{ ...Style.spaceBetweenBar }}>
                         <ProgressBar
                           sx={{ mt: "1px" }}
-                          dots={width > 900 ? 11 : width > 600 ? 10 : 9}
+                          dots={width > 900 ? 14 : width > 600 ? 14 : 14}
                         />
 
                         <Typography sx={Style.progressBarRatio}>

@@ -29,13 +29,15 @@ export const globalStyle = {
     justifyContent: "center",
   },
   HeroBanner: (isSection, isFull, isTabShown) => ({
-    ml: isTabShown ? { xs: "-17px", sm: "-26px" } : 0,
+    ml: isTabShown ? { xs: "4px", sm: "-26px" } : 0,
     mx: isSection && !isTabShown && { xs: "auto", sm: "auto" },
     pt: isSection ? { xs: "8px", sm: "12px", md: "12px" } : "34px",
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
+    // background: "black",
     width: "100%",
-    // mx: 'auto',
+    // mx: "auto",
     maxWidth: isSection && !isTabShown ? "1470px" : "100%",
     pb: isFull ? 2 : 0,
     pl: isFull ? 2.5 : 0,
@@ -72,6 +74,7 @@ export const globalStyle = {
     maxWidth: { xs: "320px", sm: "380px" },
   },
   arrowback: {
+    display: { xs: "none", sm: "flex", lg: "flex", xl: "flex" },
     cursor: "pointer",
     width: { xs: "38px", sm: "50px", md: "50px" },
     height: { xs: "33px", sm: "45px", md: "45px" },
@@ -121,7 +124,7 @@ export const globalStyle = {
   tabs: (isActive) => ({
     color: isActive ? "#3447D4" : "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: { xs: "18px", sm: "17px", md: "20px", xl: "24px" },
+    fontSize: { xs: "16px", sm: "17px", md: "20px", xl: "24px" },
     fontWeight: "400",
     // width: { xs: "70px", md: "100px" },
     minWidth: "fit-content",
@@ -156,7 +159,6 @@ export const globalStyle = {
     display: "flex",
     overflow: !!isTabs ? "auto" : "hidden",
     scrollbarWidth: "none",
-    display: "flex",
     justifyContent: "space-between",
   }),
   tabsTyp: {

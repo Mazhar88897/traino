@@ -14,10 +14,10 @@ export const Style = {
       md: "30px",
     },
     display: "flex",
-    gap: "33px 23px",
+    gap: "30px 20px",
     flexWrap: "wrap",
     justifyContent: {
-      xs: width < 400 ? "center" : "start",
+      xs: width < 350 ? "center" : "start",
       sm: !!isDrawer && width < 712 ? "center" : "start",
       md: isUser && width < 931 ? "center" : "start",
       lg: "start",

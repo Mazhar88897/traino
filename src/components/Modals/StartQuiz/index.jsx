@@ -9,8 +9,8 @@ import { useLocation } from "react-router-dom";
 
 const StartQuizModal = ({ open, setOpen, onConfirm }) => {
   const { result_status, score, attempt_status, index } = open;
-  const location = useLocation()
-  const state = location?.state
+  const location = useLocation();
+  const state = location?.state;
   const selectedDocData = state?.val;
 
   return (
@@ -19,7 +19,10 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
         <RxCross2 style={style.closeIcon} onClick={() => setOpen(false)} />
       </Box>
       <Box sx={style.borderedContainer}>
-        <Typography sx={style.quizNoHeading}>QUIZ {index >= 10 ? "" : "0"}{index + 1}</Typography>
+        <Typography sx={style.quizNoHeading}>
+          QUIZ {index >= 10 ? "" : "0"}
+          {index + 1}
+        </Typography>
         <Typography sx={style.quizText}>{selectedDocData?.name}</Typography>
         <Box sx={style.quizInfoContainer}>
           <Typography sx={style.quizQuestions}>10 Questions</Typography>
@@ -31,10 +34,26 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
       </Box>
       <Box sx={style.instructionContainer}>
         <Typography sx={style.instructionHeading}>Instructions</Typography>
-        <Box component={"ul"} sx={{display: 'flex', flexDirection: 'column', alignItems: 'start', color: '#000', pl: 2.75, my: 0.5}}>
-          <Typography component={"li"} sx={style.instruction}>You have 20 minutes to complete the quiz.</Typography>
-          <Typography component={"li"} sx={style.instruction}>Answers will not be saved if you go back.</Typography>
-          <Typography component={"li"} sx={style.instruction}>Click Submit at the end to finalize your answers.</Typography>
+        <Box
+          component={"ul"}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "start",
+            color: "#000",
+            pl: 2.5,
+            my: 0.25,
+          }}
+        >
+          <Typography component={"li"} sx={style.instruction}>
+            You have 20 minutes to complete the quiz.
+          </Typography>
+          <Typography component={"li"} sx={style.instruction}>
+            Answers will not be saved if you go back.
+          </Typography>
+          <Typography component={"li"} sx={style.instruction}>
+            Click Submit at the end to finalize your answers.
+          </Typography>
         </Box>
       </Box>
       <Box sx={{ width: "100%" }}>
@@ -42,24 +61,31 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: "10px",
+            gap: "8px",
           }}
         >
           {score !== null && (
-            <Typography sx={{ fontSize: {xs: "24px", sm: "30px"}, color: "#000" }}>
+            <Typography
+              sx={{ fontSize: { xs: "20px", sm: "30px" }, color: "#000" }}
+            >
               Score :{" "}
-              <Typography component={"span"} sx={{ fontSize: {xs: "24px", sm: "30px"} }}>
+              <Typography
+                component={"span"}
+                sx={{ fontSize: { xs: "20px", sm: "30px" } }}
+              >
                 {score}%
               </Typography>
             </Typography>
           )}
           {result_status !== null && (
-            <Typography sx={{ fontSize: "24px", color: "#000" }}>
+            <Typography
+              sx={{ fontSize: { xs: "20px", sm: "22px" }, color: "#000" }}
+            >
               Status :{" "}
               <Typography
                 component={"span"}
                 sx={{
-                  fontSize: "24px",
+                  fontSize: { xs: "20px", sm: "22px" },
                   color: result_status == "Pass" ? "#007B05" : "#C20B0B",
                 }}
               >
@@ -73,8 +99,17 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
             </Typography>
           )}
           <CustomButton
-            buttonText={`${attempt_status == "Attempted" ? "Retake" : "Start"} Quiz`}
-            rightIcon={<Box component="img" src={IMAGES.questionMark} sx={{ width: {xs: '18px', sm: '24px'} }} ml={0.5} />}
+            buttonText={`${
+              attempt_status == "Attempted" ? "Retake" : "Start"
+            } Quiz`}
+            rightIcon={
+              <Box
+                component="img"
+                src={IMAGES.questionMark}
+                sx={{ width: { xs: "18px", sm: "24px" } }}
+                ml={0.5}
+              />
+            }
             typSx={style.buttonText}
             sx={style.startQuizButton}
             onClick={onConfirm}

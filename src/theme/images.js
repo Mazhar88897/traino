@@ -83,7 +83,7 @@ import allTeamAvatar from "../assets/all_team_avatar.png";
 import techLogo from "../assets/techLogo.png";
 import firstTrainingCard from "../assets/firstTrainingCard.png";
 import StopWatch from "../assets/Stopwatch.png";
-
+import whiteBack from "../assets/whiteBack.png";
 const IMAGES = {
   training1,
   training2,
@@ -170,5 +170,6 @@ const IMAGES = {
   techLogo,
   firstTrainingCard,
   StopWatch,
+  whiteBack,
 };
 export { IMAGES };

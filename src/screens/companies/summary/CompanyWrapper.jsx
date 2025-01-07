@@ -47,6 +47,10 @@ const CompanyWrapper = ({
 
   const quizData = state?.quizData;
 
+  const goBack = () => {
+    navigate(-1); // Goes back to the previous page
+  };
+
   const [tab, setActiveTab] = useState(location?.search?.split("?=")[1]);
   const tabs = tabsArray({
     id,
@@ -85,7 +89,12 @@ const CompanyWrapper = ({
         <Box sx={Style.header(section === "attemptQuiz")}>
           <Typography
             sx={{
-              display: "-webkit-box",
+              display: {
+                xs: "flex",
+                sm: "-webkit-box",
+                md: "-webkit-box",
+                lg: "-webkit-box",
+              },
               overflow: "hidden",
               textOverflow: "ellipsis",
               WebkitLineClamp: 2, // Limit text to 2 lines
@@ -93,8 +102,22 @@ const CompanyWrapper = ({
               whiteSpace: "normal", // Allow line wrapping
               wordBreak: "break-all",
               width: "100%",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
+            <Box
+              component={"img"}
+              sx={{
+                width: "30px",
+                pr: 1,
+                // mt: 2.5,
+                display: { sm: "none", lg: "none", xl: "none" },
+                // background: "black",
+              }}
+              src={IMAGES.whiteBack}
+              onClick={goBack}
+            />
             <Typography sx={Style.trainingHeading} component={"span"}>
               Training:
             </Typography>
@@ -355,7 +378,7 @@ const CompanyWrapper = ({
                         display: "flex",
                         alignItems: "center",
                         pt: { xs: "4px" },
-                        gap: { xs: "2px", sm: "12px", md: "12px" },
+                        gap: { xs: "8px", sm: "12px", md: "12px" },
                         borderRight: index == 2 ? "0" : "1px solid #F0F0F0",
                         px: "0",
                         cursor: "pointer",
@@ -363,9 +386,8 @@ const CompanyWrapper = ({
                     >
                       <Box
                         sx={{
-                          width: { xs: "20px", sm: "31px", md: "31px" },
-                          height: { xs: "20px", sm: "31px", md: "31px" },
-                          pr: { xs: "2px" },
+                          width: { xs: "23.38px", sm: "30px", md: "30px" },
+                          height: { xs: "23.38px", sm: "30px", md: "30px" },
                         }}
                         component={"img"}
                         src={val.src}
