@@ -13,12 +13,14 @@ const Settings = () => {
   const { first_name, last_name, role, isSuperAdmin } = useSelector(selectUser);
   const name = first_name + " " + last_name;
   const navigate = useNavigate();
-  const { width } = useWindowDimensions()
-  const [selectedTab, setSelectedTab] = useState(width < 950 ? "Edit" : "Edit Profile");
+  const { width } = useWindowDimensions();
+  const [selectedTab, setSelectedTab] = useState(
+    width < 950 ? "Edit" : "Edit Profile"
+  );
 
   useEffect(() => {
-    setSelectedTab(width < 950 ? "Edit" : "Edit Profile")
-  },[width])
+    setSelectedTab(width < 950 ? "Edit" : "Edit Profile");
+  }, [width]);
 
   const headingData = [
     {
@@ -29,7 +31,11 @@ const Settings = () => {
     },
   ];
 
-  const tabs = [width < 950 ? "Edit" : "Edit Profile", "Subscription", "Appearance"];
+  const tabs = [
+    width < 950 ? "Edit" : "Edit Profile",
+    "Subscription",
+    "Appearance",
+  ];
 
   return (
     <CompanyWrapper
@@ -41,7 +47,7 @@ const Settings = () => {
           <Box sx={Style.child1}>
             <AccountCircleIcon sx={Style.headerIcon} />
             {/* <Typography sx={Style.updateText}>Update Picture</Typography> */}
-            <Typography sx={Style.name}>{name}</Typography>
+            <Typography sx={Style.name}></Typography>
             <Typography sx={[Style.role, Style.ellipse]} variant="h6">
               {role}
             </Typography>
@@ -55,18 +61,24 @@ const Settings = () => {
               </Typography>
               <FormControlLabel
                 sx={Style.labelToggle}
-                control={<Switch name="toggleSwitch" sx={Style.toggleStyle(true)} />}
+                control={
+                  <Switch name="toggleSwitch" sx={Style.toggleStyle(true)} />
+                }
               />
             </Box>
-            {!isSuperAdmin && <Box sx={Style.notificationSection}>
-              <Typography sx={Style.notificationSectionText}>
-                Quiz Reminder
-              </Typography>
-              <FormControlLabel
-                sx={Style.labelToggle}
-                control={<Switch name="toggleSwitch" sx={Style.toggleStyle(false)} />}
-              />
-            </Box>}
+            {!isSuperAdmin && (
+              <Box sx={Style.notificationSection}>
+                <Typography sx={Style.notificationSectionText}>
+                  Quiz Reminder
+                </Typography>
+                <FormControlLabel
+                  sx={Style.labelToggle}
+                  control={
+                    <Switch name="toggleSwitch" sx={Style.toggleStyle(false)} />
+                  }
+                />
+              </Box>
+            )}
           </Box>
         </Box>
         <Box sx={Style.secondSection(width)}>
@@ -89,7 +101,9 @@ const Settings = () => {
                 );
               })}
             </Box>
-            {selectedTab == (width < 950 ? "Edit" : "Edit Profile") && <EditProfileForm />}
+            {selectedTab == (width < 950 ? "Edit" : "Edit Profile") && (
+              <EditProfileForm />
+            )}
           </Box>
         </Box>
       </Box>

@@ -138,9 +138,10 @@ export const Style = {
   },
   menuListName: {
     display: { sm: "none", lg: "none", xl: "none" },
-    px: "3px",
+    px: 3,
+    color: "#3447D4",
     py: "6px",
-    color: "#1F1F1F",
+
     fontFamily: "Rubik",
     fontSize: "14px",
     fontWeight: "400",
