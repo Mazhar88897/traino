@@ -84,6 +84,7 @@ import techLogo from "../assets/techLogo.png";
 import firstTrainingCard from "../assets/firstTrainingCard.png";
 import StopWatch from "../assets/Stopwatch.png";
 import whiteBack from "../assets/whiteBack.png";
+import mobileview from "../assets/mobileview.png";
 const IMAGES = {
   training1,
   training2,
@@ -171,5 +172,6 @@ const IMAGES = {
   firstTrainingCard,
   StopWatch,
   whiteBack,
+  mobileview,
 };
 export { IMAGES };

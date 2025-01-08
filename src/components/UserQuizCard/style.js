@@ -131,7 +131,8 @@ export const Style = {
     },
   }),
   btnText: (isLarge) => ({
-    fontSize: { xs: isLarge ? "20px" : "14px", xl: isLarge ? "21px" : "16px" },
+    // fontSize: { xs: isLarge ? "20px" : "14px", xl: isLarge ? "21px" : "16px" },
+    fontSize: { xs: "18px", md: "20px", sm: "20px", lg: "20px", xl: "20px" },
     fontWeight: isLarge ? "500" : "400",
   }),
   uploadButton: {

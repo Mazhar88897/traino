@@ -14,7 +14,13 @@ const DashboardHeader = () => {
     <TopBanner
       isDashboard={true}
       heading={
-        <Box sx={{ px: { xs: 1.5, md: 0, xl: 0.75 }, display: 'flex', flexDirection: 'column' }}>
+        <Box
+          sx={{
+            px: { xs: 0, md: 0, xl: 0.75 },
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <Typography
             // component={"span"}
             sx={{

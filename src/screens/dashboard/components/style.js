@@ -6,7 +6,7 @@ export const Style = {
   // Calendar
   calendarProvider: {
     width: "100%",
-    maxWidth:  { xs: "100%", lg: "320px" },
+    maxWidth: { xs: "100%", lg: "320px" },
     position: "relative",
   },
   datePicker: {
@@ -31,7 +31,7 @@ export const Style = {
     },
     "& .MuiPickersCalendarHeader-root": {
       width: "100%",
-      maxWidth:  "280px",
+      maxWidth: "280px",
       position: "relative",
       padding: 0,
       display: "flex",
@@ -142,7 +142,7 @@ export const Style = {
     height: "50px",
     color: isRed ? "#D92D20" : "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: {xs: "16px", xl: '17px'},
+    fontSize: { xs: "16px", xl: "17px" },
     fontWeight: "400",
     letterSpacing: "0.5px",
     display: "flex",
@@ -182,7 +182,7 @@ export const Style = {
     borderRadius: 10,
     background: "linear-gradient(180deg, #9BB3F2 10%, rgba(255,255,255,1) 65%)",
     padding: "50px 30px 60px 30px",
-    maxWidth:  298,
+    maxWidth: 298,
     width: { lg: "auto", sm: "100%", xs: "100%" },
     maxHeight: 243,
     height: 223,
@@ -202,8 +202,11 @@ export const Style = {
   // adminCard
   adminCardContainer: (updatedDate) => ({
     width: { xs: "100%", md: "calc(50% - 8px)", lg: "calc(25% - 8px)" },
-    maxWidth:  { xs: "600px", lg: "472px" },
-    height: {xs: !updatedDate ? "117px" : "142px", xl: !updatedDate ? "125px" : "150px"},
+    maxWidth: { xs: "600px", lg: "472px" },
+    height: {
+      xs: !updatedDate ? "117px" : "142px",
+      xl: !updatedDate ? "125px" : "150px",
+    },
     borderRadius: "8px !important",
     overflow: "hidden",
     mt: { xs: "0px", lg: "-60px" },
@@ -216,15 +219,15 @@ export const Style = {
   },
   adminCardIcon: {
     backgroundColor: "#7152F30D",
-    width: {xs: "39px", xl: '42px'},
-    height: {xs: "37px", xl: '40px'},
+    width: { xs: "39px", xl: "42px" },
+    height: { xs: "37px", xl: "40px" },
     borderRadius: "5px",
     p: "8px",
   },
   adminCardTittle: {
     color: "#16151C",
     fontFamily: "Rubik",
-    fontSize: {xs: "14px", xl: '16px'},
+    fontSize: { xs: "14px", xl: "16px" },
     fontWeight: "400",
     lineHeight: "22px",
   },
@@ -244,7 +247,7 @@ export const Style = {
   },
   adminCardTotal: {
     fontFamily: "Rubik",
-    fontSize: {xs: "26px", xl: '28px'},
+    fontSize: { xs: "26px", xl: "28px" },
     fontWeight: 500,
     mb: 1,
     lineHeight: "35px",
@@ -252,8 +255,8 @@ export const Style = {
   adminCardPercent: (isSuperAdmin) => ({
     backgroundColor: isSuperAdmin ? COLORS.white : COLORS.lightGreen,
     opacity: 0.8,
-    width: {xs: "48px", xl: '56px'},
-    height: {xs: "24px", xl: '28px'},
+    width: { xs: "48px", xl: "56px" },
+    height: { xs: "24px", xl: "28px" },
     borderRadius: "5px",
     p: "10px",
     pr: 3,
@@ -262,11 +265,17 @@ export const Style = {
     alignItems: "center",
     gap: "5px",
   }),
-  upArrow: { width: {xs: "10px", xl: '12px'}, height: {xs: "9px", xl: '11px'} },
+  upArrow: {
+    width: { xs: "10px", xl: "12px" },
+    height: { xs: "9px", xl: "11px" },
+  },
   percent: (isSuperAdmin) => ({
     fontFamily: "Rubik",
     color: isSuperAdmin ? COLORS.lightGray : "#30BE82",
-    fontSize: {xs: isSuperAdmin ? "12px" : "11px", xl: isSuperAdmin ? "14px" : "13px"},
+    fontSize: {
+      xs: isSuperAdmin ? "12px" : "11px",
+      xl: isSuperAdmin ? "14px" : "13px",
+    },
   }),
   updatedDateContainer: {
     p: "12px",
@@ -275,7 +284,7 @@ export const Style = {
   },
   updatedDate: {
     fontFamily: "Rubik",
-    fontSize: {xs: "12px", xl: '14px'},
+    fontSize: { xs: "12px", xl: "14px" },
   },
   circularProgressbar: (isgreen) => ({
     rotation: 0,
@@ -289,19 +298,19 @@ export const Style = {
   dashboardHeading: {
     color: "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: { xs: "28px", xl: "32px" },
+    fontSize: { xs: "20px", xl: "32px" },
     fontWeight: "500",
   },
   day: {
     color: "#3447D4",
     fontFamily: "Rubik",
-    fontSize: { xs: "14px", xl: "18px" },
+    fontSize: { xs: "12px", xl: "18px" },
     fontWeight: "400",
   },
   date: {
     color: "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: { xs: "14px", xl: "18px" },
+    fontSize: { xs: "12px", xl: "18px" },
     fontWeight: "400",
   },
 };

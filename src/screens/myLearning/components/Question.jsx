@@ -208,6 +208,7 @@ const Question = ({ percentage, setPercentage }) => {
                       Object.entries(selectedIndex.options[0]).map(
                         ([key, value], ind) => {
                           return (
+                            // <></>
                             <Box
                               sx={Style.answerContainer(
                                 !!submitData?.answers &&

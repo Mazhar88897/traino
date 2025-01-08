@@ -14,7 +14,7 @@ export const globalStyle = {
     height: { xs: "100%", md: "100%" },
     maxHeight: { md: "59vw !important" },
     borderRadius: "24px",
-    p: { xs: "20px 0", sm: "12px 9px" },
+    p: { xs: "18px 0", sm: "12px 9px" },
     pr: { sm: 0 },
     border: { md: "4px solid #D1C8FF" },
     background: "white",

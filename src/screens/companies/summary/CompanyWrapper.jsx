@@ -87,14 +87,31 @@ const CompanyWrapper = ({
     <Layout>
       {section && !section.includes("quizResult") ? (
         <Box sx={Style.header(section === "attemptQuiz")}>
+          <Box
+            component={"img"}
+            sx={{
+              width: "23px",
+              height: "22px",
+              display: { sm: "none", lg: "none", xl: "none" },
+            }}
+            src={IMAGES.whiteBack}
+            onClick={() => {
+              let ind = tabs?.findIndex((val) => isActiveCondition(val));
+              if (
+                section === "attemptQuiz" ||
+                section === "quizResult" ||
+                section === "uploadQuiz"
+              )
+                handleBack();
+              else if (isTabs && ind != -1) {
+                tabs[ind].handleBack();
+              } else navigate(-1);
+            }}
+          />
+
           <Typography
             sx={{
-              display: {
-                xs: "flex",
-                sm: "-webkit-box",
-                md: "-webkit-box",
-                lg: "-webkit-box",
-              },
+              display: "-webkit-box",
               overflow: "hidden",
               textOverflow: "ellipsis",
               WebkitLineClamp: 2, // Limit text to 2 lines
@@ -106,21 +123,10 @@ const CompanyWrapper = ({
               justifyContent: "center",
             }}
           >
-            <Box
-              component={"img"}
-              sx={{
-                width: "30px",
-                pr: 1,
-                // mt: 2.5,
-                display: { sm: "none", lg: "none", xl: "none" },
-                // background: "black",
-              }}
-              src={IMAGES.whiteBack}
-              onClick={goBack}
-            />
             <Typography sx={Style.trainingHeading} component={"span"}>
               Training:
             </Typography>
+
             <Typography sx={Style.trainingName} component={"span"}>
               {selectedDocData?.name}
             </Typography>
@@ -462,7 +468,7 @@ const CompanyWrapper = ({
                             sx={{
                               color: "#1F1F1F",
                               fontFamily: "Rubik",
-                              fontSize: { xs: "18px", xl: "32px" },
+                              fontSize: { xs: "22px", xl: "32px" },
                               fontStyle: "normal",
                               fontWeight: "500",
                               width: "100%",

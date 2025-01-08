@@ -148,7 +148,7 @@ export const Style = {
   noRecordHeading: {
     color: "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: "28px",
+    fontSize: { xs: "22px", sm: "28px", md: "28", lg: "28", xl: "28" },
     fontWeight: "600",
     lineHeight: "38px",
     mt: 2,
@@ -156,14 +156,20 @@ export const Style = {
   noRecordText: {
     color: "#4B4B4B",
     fontFamily: "Rubik",
-    fontSize: "18px",
+    fontSize: { xs: "14px", sm: "18px", md: "18px", lg: "18px", xl: "18px" },
     fontWeight: "400",
     lineHeight: "38px",
     textAlign: "center",
   },
   noRecordImg: {
     width: "100%",
-    maxWidth: "270px",
+    maxWidth: {
+      xs: "200px",
+      sm: "270px",
+      md: "270px",
+      lg: "270px",
+      xl: "270px",
+    },
   },
   createTrainingMain: {
     position: "relative",

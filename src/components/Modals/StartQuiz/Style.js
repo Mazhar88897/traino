@@ -41,9 +41,10 @@ export const style = {
     borderRadius: "4px",
     color: "#ffff",
     maxWidth: { xs: "340px", sm: "366px" },
-    my: { xs: 1, sm: 2 },
+    my: { xs: 4, sm: 2 },
     width: "100%",
     mx: "auto",
+    mb: "30px",
   },
   buttonText: {
     color: "#FFF",
@@ -85,9 +86,10 @@ export const style = {
     flexDirection: "column",
     maxWidth: "400px",
     alignItems: "start",
-    mt: { xs: 1, sm: 2 },
+    mt: { xs: 4, sm: 2 },
   },
   instructionHeading: {
+    mt: { xs: 2 },
     color: "#1E2265",
     fontFamily: "Rubik",
     fontSize: "18px",

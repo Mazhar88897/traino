@@ -108,11 +108,11 @@ const TopBanner = ({
                     key={index}
                     component={"span"}
                     sx={{
-                      my: "auto",
+                      my: { xs: "13px", sm: "18px", md: "20px" },
                       fontSize:
                         index !== headingData?.length - 1
-                          ? { xs: "16px", sm: "18px", md: "20px" }
-                          : { xs: "18px", sm: "20px", md: "22px" },
+                          ? { xs: "13px", sm: "18px", md: "20px" }
+                          : { xs: "14px", sm: "20px", md: "22px" },
                       fontFamily: "Rubik",
                       fontWeight:
                         index !== headingData?.length - 1 ? "400" : "500",
@@ -167,6 +167,29 @@ const TopBanner = ({
           />
         </Paper>
         <DrawerHeader>
+          <Box
+            sx={{
+              display: { sm: "none", md: "none", lg: "none", xl: "none" },
+              mt: "5px",
+            }}
+          >
+            <Box
+              component={"img"}
+              src={IMAGES.search}
+              sx={{ width: { xs: "22px" } }}
+            />
+          </Box>
+
+          <Typography
+            sx={{
+              display: { sm: "none", md: "none", lg: "none", xl: "none" },
+              color: "#DCDCDC",
+              px: "6px",
+              fontSize: "32px",
+            }}
+          >
+            |
+          </Typography>
           <Box sx={Style.headerContainer}>
             <Box
               sx={{

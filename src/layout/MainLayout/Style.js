@@ -83,6 +83,7 @@ export const Style = {
     color: "#151515",
     fontFamily: "Rubik",
     fontSize: "24px",
+    lineHeight: "28.44px",
     fontWeight: "600",
   },
   childrenWrapper: (isDrawerOpen, isFull, isLowPad, width) => ({

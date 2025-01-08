@@ -46,9 +46,6 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
           }}
         >
           <Typography component={"li"} sx={style.instruction}>
-            You have 20 minutes to complete the quiz.
-          </Typography>
-          <Typography component={"li"} sx={style.instruction}>
             Answers will not be saved if you go back.
           </Typography>
           <Typography component={"li"} sx={style.instruction}>
@@ -62,9 +59,10 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
             display: "flex",
             flexDirection: "column",
             gap: "8px",
+            mb: "25px",
           }}
         >
-          {score !== null && (
+          {/* {score !== null && (
             <Typography
               sx={{ fontSize: { xs: "20px", sm: "30px" }, color: "#000" }}
             >
@@ -97,7 +95,7 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
             <Typography sx={style.bottomText}>
               *you can reattempt the Quiz to improve your score
             </Typography>
-          )}
+          )} */}
           <CustomButton
             buttonText={`${
               attempt_status == "Attempted" ? "Retake" : "Start"
