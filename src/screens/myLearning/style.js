@@ -65,6 +65,7 @@ export const Style = {
     fontWeight: "500",
     lineHeight: "41px",
     letterSpacing: "-0.2px",
+    mb: 1.5,
   },
   question: (isLessHeight) => ({
     color: "#1F1F1F",
@@ -371,6 +372,7 @@ export const Style = {
     justifyContent: "center",
     gap: 2,
     mt: { xs: "18px", sm: "auto", md: "auto" },
+    mb: 2.75,
   },
   answerButton: {
     width: "40%",

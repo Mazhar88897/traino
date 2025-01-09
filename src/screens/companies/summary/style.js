@@ -66,14 +66,14 @@ export const Style = {
     fontFamily: "Rubik",
     fontSize: { xs: "20px", sm: "25px", md: "28px" },
     fontWeight: "400",
-    lineHeight: "36px",
+    lineHeight: { xs: "24px", sm: "30px", md: "36px" },
   },
   trainingName: {
     color: "#FFF",
     fontFamily: "Rubik",
     fontSize: { xs: "20px", sm: "25px", md: "28px" },
     fontWeight: "600",
-    lineHeight: "36px",
+    lineHeight: { xs: "24px", sm: "30px", md: "36px" },
     ml: 0.75,
   },
   timeMain: {
