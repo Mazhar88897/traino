@@ -19,7 +19,7 @@ import { selectUser, updateUserData } from "../../../store/slice/user";
 import CustomButton from "../../CustomButton";
 import ValidationError from "../../ValidationError";
 import { Style } from "../style";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const EditProfileForm = ({ setOpen }) => {
   const dispatch = useDispatch();
@@ -45,12 +45,7 @@ const EditProfileForm = ({ setOpen }) => {
       password: Yup.string(),
     }),
     onSubmit: async (values, { resetForm }) => {
-      const {
-        firstName,
-        lastName,
-        password,
-        currentPassword,
-      } = values;
+      const { firstName, lastName, password, currentPassword } = values;
 
       const updateProfileData = {
         first_name: firstName,
@@ -82,10 +77,10 @@ const EditProfileForm = ({ setOpen }) => {
       if (!!currentPassword && !!password) {
         setLoading(true);
         await changePassword(dispatch, navigate, newPasswordData, access)
-          .then(async(res) => {
+          .then(async (res) => {
             toast.success("password changed successfully");
-            await formik.setFieldValue("currentPassword", "")
-            await formik.setFieldValue("password", "")
+            await formik.setFieldValue("currentPassword", "");
+            await formik.setFieldValue("password", "");
             setLoading(false);
             setOpen(false);
           })
@@ -102,8 +97,7 @@ const EditProfileForm = ({ setOpen }) => {
     formik.values.firstName === first_name &&
     formik.values.lastName === last_name;
   const isPasswordChanged =
-    formik.values.currentPassword &&
-    formik.values.password 
+    formik.values.currentPassword && formik.values.password;
 
   const disabled =
     hasErrors || (!hasErrors && isNameChanged && !isPasswordChanged);
@@ -130,6 +124,7 @@ const EditProfileForm = ({ setOpen }) => {
               variant="outlined"
             >
               <OutlinedInput
+                sx={Style.inputHeight}
                 id="firstName"
                 type={"text"}
                 placeholder="First Name"
@@ -155,6 +150,7 @@ const EditProfileForm = ({ setOpen }) => {
               variant="outlined"
             >
               <OutlinedInput
+                sx={Style.inputHeight}
                 id="lastName"
                 type={"text"}
                 placeholder="Last Name"
@@ -187,6 +183,7 @@ const EditProfileForm = ({ setOpen }) => {
             >
               <OutlinedInput
                 id="currPassword"
+                sx={Style.inputHeight}
                 type={showPassword.currentPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
@@ -233,6 +230,7 @@ const EditProfileForm = ({ setOpen }) => {
             >
               <OutlinedInput
                 id="password"
+                sx={Style.inputHeight}
                 type={showPassword.password ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">

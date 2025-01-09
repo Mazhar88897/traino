@@ -90,6 +90,7 @@ export const Style = {
     justifyContent: "center",
     width: "100%",
     gap: "0px",
+    mt: { xs: "-5px" },
     ml: { xs: "0", md: "20px" },
     position: "relative",
   },
@@ -99,8 +100,8 @@ export const Style = {
     cursor: "pointer",
   },
   headerIcon: {
-    width: { xs: 40, sm: 48 },
-    height: { xs: 40, sm: 48 },
+    width: { xs: 34, sm: 48 },
+    height: { xs: 34, sm: 48 },
     ml: { xs: 0, sm: 1, md: 2 },
     color: "#3346D3",
   },

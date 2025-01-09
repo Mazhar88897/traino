@@ -47,7 +47,7 @@ const Settings = () => {
           <Box sx={Style.child1}>
             <AccountCircleIcon sx={Style.headerIcon} />
             {/* <Typography sx={Style.updateText}>Update Picture</Typography> */}
-            <Typography sx={Style.name}></Typography>
+            {/* <Typography sx={Style.name}></Typography> */}
             <Typography sx={[Style.role, Style.ellipse]} variant="h6">
               {role}
             </Typography>
@@ -101,9 +101,9 @@ const Settings = () => {
                 );
               })}
             </Box>
-            {selectedTab == (width < 950 ? "Edit" : "Edit Profile") && (
-              <EditProfileForm />
-            )}
+            {/* {selectedTab == (width < 950 ? "Edit" : "Edit Profile") && ( */}
+            <EditProfileForm />
+            {/* )} */}
           </Box>
         </Box>
       </Box>

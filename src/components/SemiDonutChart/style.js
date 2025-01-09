@@ -1,7 +1,7 @@
 const Style = {
   main: {
     display: "flex",
-    width: { xs: "100%", md: "45%" },
+    width: { xs: "357px", md: "45%" },
     maxWidth: { md: "348px", xl: "495px" },
     // height: "271px",
     height: { xs: "271px", xl: "350px" },
@@ -23,7 +23,7 @@ const Style = {
     color: "#1F1F1F",
     textAlign: "center",
     fontFamily: "Rubik",
-    fontSize: { xs: "18px", xl: "22px" },
+    fontSize: { xs: "20px", xl: "22px" },
     fontWeight: "500",
     lineHeight: "120%",
   },
@@ -72,7 +72,7 @@ const Style = {
   label: {
     color: "#4B4B4B",
     fontFamily: "Rubik",
-    fontSize: { xs: "10px", xl: "18px" },
+    fontSize: { xs: "16px", xl: "18px" },
     fontWeight: "400",
     lineHeight: "130%",
   },
@@ -80,7 +80,7 @@ const Style = {
     color: "#1F1F1F",
     textAlign: "start",
     fontFamily: "Rubik",
-    fontSize: { xs: "14px", xl: "22px" },
+    fontSize: { xs: "20px", xl: "22px" },
     fontWeight: "400",
     lineHeight: "120%",
     mt: 0.75,

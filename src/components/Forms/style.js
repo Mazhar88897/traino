@@ -16,6 +16,10 @@ export const Style = {
     flexDirection: "column",
     position: "relative",
   },
+
+  inputHeight: {
+    height: { xs: "35px", md: "50px", lg: "50px", xl: "50px" },
+  },
   form: {
     fontFamily: "serif",
     display: "flex",
@@ -196,6 +200,7 @@ export const Style = {
     lineHeight: "24px",
   },
   changePasswordTittle: {
+    display: { xs: "none", md: "flex" },
     fontFamily: "Rubik",
     fontSize: "18px",
     fontStyle: "normal",

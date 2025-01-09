@@ -18,6 +18,7 @@ export const Style = {
     },
     display: "flex",
     flexDirection: "column",
+    // justifyContent: "center",
   }),
   circularProgressbar: {
     rotation: 0.5,
@@ -28,8 +29,13 @@ export const Style = {
     fontWeight: "700",
   },
   rightContainer: (isSuperAdmin) => ({
-    width: { xs: "100%", lg: isSuperAdmin ? "calc(25% + 4px)" : "30%" },
-    maxWidth: { xs: "100%", lg: isSuperAdmin ? "282px" : "310px", xl: "380px" },
+    width: { xs: "354px", lg: isSuperAdmin ? "calc(25% + 4px)" : "30%" },
+    // justifyContent: "center",
+    maxWidth: {
+      xs: "354px",
+      lg: isSuperAdmin ? "282px" : "310px",
+      xl: "380px",
+    },
     boxSizing: "border-box",
     pl: {
       xs: 0,
@@ -37,7 +43,7 @@ export const Style = {
       xl: isSuperAdmin ? "10px" : "16px",
     },
     pt: { xs: 1.5, lg: 2.5 },
-    display: "flex",
+    // display: "flex",
     flexDirection: { lg: "column", md: "row" },
     flexWrap: "wrap",
   }),
@@ -51,7 +57,7 @@ export const Style = {
   todayHeading: {
     color: "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: { xs: "16px", xl: "20px" },
+    fontSize: { xs: "18px", xl: "20px" },
     fontWeight: "500",
     lineHeight: "24px",
     mt: 1,
@@ -60,7 +66,8 @@ export const Style = {
   improveHeading: {
     color: "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: { xs: "16px", xl: "18px" },
+    mt: 1,
+    fontSize: { xs: "14px", xl: "18px" },
     fontWeight: "400",
     lineHeight: "24px",
   },
@@ -171,7 +178,7 @@ export const Style = {
   notificationHeading: {
     color: "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: { xs: "16px", xl: "20px" },
+    fontSize: { xs: "18px", xl: "20px" },
     fontWeight: "500",
     lineHeight: "24px",
   },
@@ -246,7 +253,7 @@ export const Style = {
   },
   illustration: {
     mt: { xs: "-120px", sm: "-80px", md: 0 },
-    width: { xs: "45.5%", xl: "47%" },
+    width: { xs: "42%", xl: "47%" },
     // objectSize: '100% 100%',
     // aspectRatio: "1/1",
     // marginLeft: "auto",
@@ -285,8 +292,8 @@ export const Style = {
     lineHeight: "140%",
   },
   browseMain: {
-    height: { xs: "220px", md: "240px", xl: "300px" },
-    width: { xs: "100%", md: "calc(100% - 206px)" },
+    height: { xs: "171px", md: "240px", xl: "300px" },
+    width: { xs: "350px", md: "calc(100% - 206px)" },
     maxWidth: { md: "580px", xl: "810px" },
     // maxWidth:  { md: '580px' },
     borderRadius: "10px",
@@ -297,13 +304,15 @@ export const Style = {
     alignItems: "start",
     justifyContent: "space-between",
     flexGrow: 1,
+    pt: { xs: "7px" },
+    pl: { xs: "4px" },
   },
   browseHeading: {
     color: "#FFF",
     fontFamily: "Rubik",
     fontSize: { xs: "22px", xl: "32px" },
     fontWeight: "600",
-    lineHeight: "130%",
+    lineHeight: { xs: "31.2px", xl: "32px" },
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
@@ -314,12 +323,12 @@ export const Style = {
   browseText: {
     color: "#FFF",
     fontFamily: "Rubik",
-    fontSize: { xs: "18px", xl: "22px" },
+    fontSize: { xs: "14px", xl: "22px" },
     fontWeight: "400",
     lineHeight: "130%",
-    width: "100%",
+    width: { xs: "70%", xl: "100%", lg: "100%", sm: "100%" },
     maxWidth: "300px",
-    mt: 1.5,
+    mt: { xs: 0.75, xl: 1.5, lg: 1.5, sm: 1.5 },
   },
   browseButton: {
     color: "#3447D4",
@@ -330,7 +339,7 @@ export const Style = {
     lineHeight: "100%",
     width: { xs: "40%", md: "100%" },
     maxWidth: { lg: "130px", xl: "180px" },
-    height: { xs: "38px", xl: "52px" },
+    height: { xs: "31px", xl: "52px" },
     p: "8px 0px",
     borderRadius: "4px",
     border: "1px solid #6A7CFF",
@@ -352,8 +361,8 @@ export const Style = {
     pr: { xs: 2, md: 0 },
   },
   accuracyMain: {
-    width: { xs: "100%", md: "206px", xl: "290px" },
-    height: { xs: "220px", xl: "300px" },
+    width: { xs: "357px", md: "242px", sm: "242px", lg: "242px", xl: "242px" },
+    height: { xs: "172px", md: "240px", xl: "300px" },
     borderRadius: "12px",
     background: "#FFF",
     boxShadow: "0px 4px 39px 0px rgba(81, 69, 159, 0.08)",
@@ -369,7 +378,13 @@ export const Style = {
   },
   attemptContainer: {
     display: "flex",
-    justifyContent: "space-between",
+    flexDirection: { xs: "column", sm: "row", md: "row", lg: "row" },
+    justifyContent: {
+      xs: "center",
+      sm: "space-between",
+      md: "space-between",
+      lg: "space-between",
+    },
     mt: { xs: 0.5, xl: 1 },
   },
   quizAttempt: {
@@ -381,8 +396,9 @@ export const Style = {
   attemptQuantity: {
     color: "#3447D4",
     fontFamily: "Rubik",
-    fontSize: { xs: "16px", xl: "18px" },
+    fontSize: { xs: "22px", md: "18px", sm: "18px", lg: "18px", xl: "18px" },
     fontWeight: "500",
+    mt: { xs: 1 },
   },
   formControls: {
     display: "flex",

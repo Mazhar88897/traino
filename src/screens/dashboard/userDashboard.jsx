@@ -47,6 +47,7 @@ const UserDashboard = () => {
           display: "flex",
           flexDirection: { xs: "column", lg: "row" },
           justifyContent: "center",
+          alignItems: "center",
           width: "100%",
           maxWidth: "1500px",
           margin: "0 auto",
@@ -73,13 +74,24 @@ const UserDashboard = () => {
                 sx={{
                   width: "100%",
                   display: "flex",
-                  flexDirection: "column",
+                  flexDirection: {
+                    xs: "row",
+                    xl: "column",
+                    lg: "column",
+                    sm: "column",
+                  },
                   alignItems: "center",
+                  pl: { xs: "8px" },
                 }}
               >
                 <Box
                   sx={{
-                    width: "100%",
+                    width: {
+                      xs: "50%",
+                      xl: "100%",
+                      lg: "100%",
+                      sm: "100%",
+                    },
                   }}
                 >
                   <Typography sx={Style.score}>My Score</Typography>
@@ -92,10 +104,17 @@ const UserDashboard = () => {
                 </Box>
                 <Box
                   sx={{
-                    width: "100%",
+                    width: {
+                      xs: "50%",
+                      xl: "100%",
+                      lg: "100%",
+                      sm: "100%",
+                    },
                     maxWidth: { xs: "125px", xl: "170px" },
                     maxHeight: "120px",
                     mt: { xs: 1, xl: 1.75 },
+
+                    pl: { xs: "8px" },
                   }}
                 >
                   <CircularProgressbar
@@ -136,13 +155,26 @@ const UserDashboard = () => {
               flexDirection: { xs: "column", md: "row" },
               gap: { xs: 1.5, xl: 2 },
               mt: 2,
+              // justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <PerformanceChart />
             <SemiDonutChart />
           </Box>
-          <LeaderBoardTable isDashboard={true} />
+          <Box
+            className="hemloooooooo"
+            sx={{
+              display: "flex",
+              // width: "100%",
+              alignContent: "center",
+              justifyContent: "center",
+            }}
+          >
+            <LeaderBoardTable isDashboard={true} />
+          </Box>
         </Box>
+
         <Box sx={Style.rightContainer(false)}>
           <Calendar />
           <Box sx={Style.todayStatistics}>
@@ -175,14 +207,14 @@ const UserDashboard = () => {
                   progress={70}
                   dots={
                     width > 1535
-                      ? 11
+                      ? 13
                       : width > 1320
-                      ? 10
+                      ? 12
                       : width > 900
-                      ? 9
+                      ? 11
                       : width > 600
-                      ? 8
-                      : 7
+                      ? 11
+                      : 10
                   }
                 />
               </Box>

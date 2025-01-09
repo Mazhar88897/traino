@@ -105,7 +105,7 @@ const TrainingDocuments = () => {
         {
           name: "My Trainings >",
         },
-        { name: "" },
+
         { name: subdivision },
       ];
 

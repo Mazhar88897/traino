@@ -73,6 +73,7 @@ export default function PerformanceChart() {
   setTimeout(() => {
     const barchart = document?.getElementById("bar-chart");
     barchart.style.maxWidth = width < 1536 && "500px";
+    barchart.style.maxWidth = width < 430 && "357px";
     barchart.style.margin = "0 auto";
     const tspans = barchart?.getElementsByTagName("tspan");
     if (tspans) {
@@ -97,10 +98,10 @@ export default function PerformanceChart() {
   return (
     <Box
       sx={{
-        width: { xs: "100%", md: "55%" },
-        maxWidth: { xs: "100%", md: "450px", xl: "625px" },
+        width: { xs: "357px", md: "55%" },
+        maxWidth: { xs: "357px", md: "450px", xl: "625px" },
         border: "none",
-        height: { xs: "260px", xl: "350px" },
+        height: { xs: "274px", xl: "350px" },
         borderRadius: "7px",
         background: "#FFF",
         boxShadow: "0px 4px 39px 0px rgba(81, 69, 159, 0.08)",

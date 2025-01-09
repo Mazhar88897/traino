@@ -1,31 +1,31 @@
 export const Style = {
   container: {
-  maxWidth:  "1470px",
+    maxWidth: "1470px",
     width: "100%",
     margin: "25px auto 0",
     display: "flex",
     flexDirection: { xs: "column", md: "row" },
-    gap: { xs: "10px", md: "20px" },
+    gap: { xs: "5px", md: "20px" },
     alignItems: "center",
     flexGrow: 1,
-    height: 'calc(100vh - 150px)',
-    boxSizing: 'border-box',
+    height: "calc(100vh - 150px)",
+    boxSizing: "border-box",
     // overflow: 'hidden',
     justifyContent: "space-between",
   },
   firstSection: {
     display: "flex",
-    flexDirection: 'column',
-    justifyContent: 'space-evenly',
+    flexDirection: "column",
+    justifyContent: "space-evenly",
     flexGrow: 1,
-    height: '100%',
-    minHeight: 'fit-content',
+    height: "100%",
+    minHeight: "fit-content",
     width: { xs: "100%", md: "30%" },
-    maxHeight: '780px',
-    minWidth: '245px',
+    maxHeight: "780px",
+    minWidth: "245px",
     borderRadius: "8px",
     boxShadow: "6px 4px 39px 0px rgba(81, 69, 159, 0.08)",
-    paddingBottom: { xs: "20px", md: "20px" },
+    paddingBottom: { xs: "10px", md: "20px" },
   },
   child1: {
     display: "flex",
@@ -45,7 +45,7 @@ export const Style = {
     mt: 1,
     textAlign: "right",
     fontFamily: "Rubik",
-    fontSize: "20px",
+    fontSize: { xs: "10px", md: "20px", lg: "20px", xl: "20px" },
     fontWeight: "500",
     overflow: "hidden",
     textOverflow: "ellipsis",
@@ -64,56 +64,61 @@ export const Style = {
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
     display: "inline",
-  maxWidth:  { xs: "120px", md: "190px" },
+    maxWidth: { xs: "120px", md: "190px" },
     width: "auto",
   },
   headerIcon: {
-    width: "114px",
-    height: "114px",
+    mt: 1,
+    width: { xs: "50px", md: "114px", lg: "114px", xl: "114px" },
+    height: { xs: "50px", md: "114px", lg: "114px", xl: "114px" },
     ml: { xs: 0, sm: 1, md: 2 },
     color: "#3346D3",
   },
   child2: {
     display: "flex",
     flexDirection: "column",
-    pt: {xs: 3, md: 0},
+    pt: { xs: 3, md: 0 },
     paddingBottom: { xs: "20px", md: "0px" },
-    px: { xs: "16px", md: '28px', lg: "34px", xl: "40px" },
+    px: { xs: "16px", md: "28px", lg: "34px", xl: "40px" },
   },
   notificationText: {
     fontFamily: "Rubik",
-    fontSize: "20px",
+    fontSize: { xs: "18px", md: "20px", lg: "20px", xl: "20px" },
     fontStyle: "normal",
     fontWeight: "500",
     lineHeight: "normal",
   },
   divider: {
-    mt: 2,
+    mt: { xs: "10px", md: 2, lg: 2, xl: 2 },
     height: "1px",
     border: "0.6px solid rgba(218, 218, 218, 0.50)",
   },
   notificationSection: {
-    width: '100%',
+    width: "100%",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    mt: 2,
+    mt: { xs: "10px", md: 1, lg: 1, xl: 1 },
   },
   notificationSectionText: {
     fontFamily: "Rubik",
-    fontSize: {xs: '16px', md: "14px", lg: "16px"},
+    fontSize: { xs: "16px", md: "14px", lg: "16px" },
     fontStyle: "normal",
     fontWeight: "400",
     lineHeight: "normal",
-    minWidth: '100px'
+    minWidth: "100px",
   },
   toggleStyle: (isFirst) => ({
     "& .MuiSwitch-switchBase": {
-      padding: isFirst ? "14.3px 13.5px 14.3px 15px" : "14.3px 14px 14.3px 15px", // Padding for the thumb
+      padding: isFirst
+        ? "14.3px 13.5px 14.3px 15px"
+        : "14.3px 14px 14.3px 15px", // Padding for the thumb
       "&.Mui-checked": {
         transform: "translateX(16px)", // Moves the thumb to the right when checked
         color: "#FFF", // Thumb color when checked
-        padding: isFirst ? "14.3px 13.5px 14.3px 11px" : "14.3px 14px 14.3px 11px", // Padding for the thumb
+        padding: isFirst
+          ? "14.3px 13.5px 14.3px 11px"
+          : "14.3px 14px 14.3px 11px", // Padding for the thumb
       },
     },
     "& .MuiSwitch-thumb": {
@@ -130,34 +135,34 @@ export const Style = {
     },
     "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
       backgroundColor: "#6A7CFF", // Background color when checked
-      opacity: 1
+      opacity: 1,
     },
   }),
   labelToggle: {
     mr: 0,
     ml: 0,
-    width: {xs: '45px', lg: '35px'},
+    width: { xs: "45px", lg: "35px" },
   },
   secondSection: (width) => ({
     display: "flex",
-    flexDirection: 'column',
-    flexGrow: {xs: 0, md: 1},
-    height: {xs: 'fit-content', md: '100%'},
+    flexDirection: "column",
+    flexGrow: { xs: 0, md: 1 },
+    height: { xs: "fit-content", md: "100%" },
     // minHeight: 'fit-content',
-    maxHeight: '780px',
+    maxHeight: "780px",
     width: { xs: "100%", md: width < 1175 ? "calc(100% - 245px)" : "68%" },
     flexShrink: "0",
     borderRadius: "8px",
     background: "var(--Neutral-White, #FFF)",
     boxShadow: "22px 4px 39px 0px rgba(81, 69, 159, 0.08)",
-    px: { xs: "16px", md: '28px', lg: "34px", xl: '40px' },
-    overflow: 'auto'
+    px: { xs: "16px", md: "28px", lg: "34px", xl: "40px" },
+    overflow: "auto",
   }),
   child3: {
     display: "flex",
     flexDirection: "column",
     paddingTop: { xs: "20px", md: "70px" },
-    paddingBottom: { xs: "20px", md: "20px" },
+    paddingBottom: { xs: "5px", md: "20px" },
   },
   profileInformationText: {
     fontFamily: "Rubik",
@@ -168,7 +173,7 @@ export const Style = {
   },
   tabsContainer: {
     display: "flex",
-    gap: {xs: "10px", lg: "28px"},
+    gap: { xs: "10px", lg: "28px" },
     borderBottom: "3px solid #EAEAEA",
     mt: 2,
     overflowX: {
@@ -191,15 +196,15 @@ export const Style = {
   },
   tabsText: (selectedTab) => ({
     color: selectedTab ? "#3447D4" : "#4B4B4B",
-    fontFamily: 'Rubik',
-    fontSize: {xs: "16px", lg: "18px"},
+    fontFamily: "Rubik",
+    fontSize: { xs: "16px", lg: "18px" },
     cursor: "pointer",
     mb: 1,
   }),
   tabsBorder: (selectedTab) => ({
     mb: "-2.5px",
     borderRadius: "10px",
-    height: '3px',
+    height: "3px",
     background: selectedTab ? "#3447D4" : "none",
   }),
 };

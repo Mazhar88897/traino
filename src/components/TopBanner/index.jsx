@@ -170,7 +170,7 @@ const TopBanner = ({
           <Box
             sx={{
               display: { sm: "none", md: "none", lg: "none", xl: "none" },
-              mt: "5px",
+              // mt: "4px",
             }}
           >
             <Box
@@ -184,8 +184,9 @@ const TopBanner = ({
             sx={{
               display: { sm: "none", md: "none", lg: "none", xl: "none" },
               color: "#DCDCDC",
-              px: "6px",
-              fontSize: "32px",
+              px: "4px",
+              mt: "-5px",
+              fontSize: "28px",
             }}
           >
             |
