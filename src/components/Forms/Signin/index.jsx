@@ -100,7 +100,7 @@ const SignInFrom = () => {
           user,
           true
         );
-        navigate("/dashboard");
+        navigate("/my-learning");
         resetForm();
       } catch (err) {
         setLoading(false);
