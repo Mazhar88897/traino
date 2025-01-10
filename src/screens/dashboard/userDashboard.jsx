@@ -46,8 +46,8 @@ const UserDashboard = () => {
         sx={{
           display: "flex",
           flexDirection: { xs: "column", lg: "row" },
-          justifyContent: "center",
-          alignItems: "center",
+          // justifyContent: "center",
+          alignItems: { xs: "center", lg: "start" },
           width: "100%",
           maxWidth: "1500px",
           margin: "0 auto",

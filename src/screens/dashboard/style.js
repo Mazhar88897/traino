@@ -398,7 +398,7 @@ export const Style = {
     fontFamily: "Rubik",
     fontSize: { xs: "22px", md: "18px", sm: "18px", lg: "18px", xl: "18px" },
     fontWeight: "500",
-    mt: { xs: 1 },
+    mt: { xs: 1, sm: 0, md: 0, lg: 0, xl: 0 },
   },
   formControls: {
     display: "flex",

@@ -79,14 +79,14 @@ export const style = {
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
-    marginTop: 1,
+    marginTop: 3,
   },
   instructionContainer: {
     display: "flex",
     flexDirection: "column",
     maxWidth: "400px",
     alignItems: "start",
-    mt: { xs: 4, sm: 2 },
+    mt: { xs: 5, sm: 4, md: 4, lg: 4, xl: 4 },
   },
   instructionHeading: {
     mt: { xs: 2 },
