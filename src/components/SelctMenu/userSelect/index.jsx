@@ -1,7 +1,4 @@
-import {
-  Box,
-  Typography,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -20,29 +17,40 @@ const MenuProps = {
   },
 };
 
-const UserSelect = ({ user, setUser, department, editItem, userData, setUserData }) => {
+const UserSelect = ({
+  user,
+  setUser,
+  department,
+  editItem,
+  userData,
+  setUserData,
+  emailUserSelect,
+  setEmailUserSelect,
+}) => {
   const [tempUsers, setTempUsers] = useState([]);
   const handleChange = (item) => {
-    const value = item
+    const value = item;
+
     if (!user?.includes("all") && value?.id === "all") {
       let tempData = [];
       userData?.results?.map((item) => {
         tempData?.push(item?.id);
       });
       setUser(tempData);
-    }
-    else if (user?.includes("all") && !value?.id === "all") {
+      // console.log("here : you go :", tempData);
+    } else if (user?.includes("all") && !value?.id === "all") {
       setUser([]);
     } else {
       setUser((prev) =>
-        !!prev?.length ?
-          !!prev?.includes(value?.id) ?
-            prev?.filter((item2) => item2 !== value?.id) :
-            [...prev, value?.id] :
-          [value?.id]
-      )
+        !!prev?.length
+          ? !!prev?.includes(value?.id)
+            ? prev?.filter((item2) => item2 !== value?.id)
+            : [...prev, value?.id]
+          : [value?.id]
+      );
     }
-
+    // console.log(item);
+    console.log(userData.results);
   };
 
   const { access, company_id } = useSelector(selectUser);
@@ -61,7 +69,7 @@ const UserSelect = ({ user, setUser, department, editItem, userData, setUserData
       let users = [];
       tempUserData?.departments?.length
         ? !tempUserData?.departments?.includes(id) &&
-        tempUserData?.departments?.push(id)
+          tempUserData?.departments?.push(id)
         : (tempUserData.departments = [id]);
       temp1?.users?.map((item2, index2) => {
         data?.results?.map((item3) => {
@@ -76,13 +84,13 @@ const UserSelect = ({ user, setUser, department, editItem, userData, setUserData
                 ind == -1
                   ? [id]
                   : !tempUserData?.results[ind].departId?.includes(id)
-                    ? [...tempUserData?.results[ind].departId, id]
-                    : [...tempUserData?.results[ind].departId];
+                  ? [...tempUserData?.results[ind].departId, id]
+                  : [...tempUserData?.results[ind].departId];
               tempUserData.results = !tempUserData?.results?.length
                 ? [tempItem]
                 : ind == -1
-                  ? [...tempUserData?.results, tempItem]
-                  : [
+                ? [...tempUserData?.results, tempItem]
+                : [
                     ...tempUserData?.results.slice(0, ind),
                     tempItem,
                     ...tempUserData?.results.slice(ind + 1),
@@ -101,12 +109,15 @@ const UserSelect = ({ user, setUser, department, editItem, userData, setUserData
     setUserData(tempUserData);
   };
   useEffect(() => {
-    let departId = !!department?.data?.length && department?.data[department?.data?.length - 1]?.id;
+    let departId =
+      !!department?.data?.length &&
+      department?.data[department?.data?.length - 1]?.id;
     let tempData = { ...tempUsers };
     let tempUserData = { ...userData };
     if (
       !!department?.data?.length &&
-      !tempUsers?.departments?.includes(departId) && !!departId?.length
+      !tempUsers?.departments?.includes(departId) &&
+      !!departId?.length
     )
       getUser(departId);
     else if (department?.status == "remove") {
@@ -120,7 +131,9 @@ const UserSelect = ({ user, setUser, department, editItem, userData, setUserData
         return item;
       });
       tempUserData.results = tempUserData?.results?.filter(
-        (item) => (tempUserData?.results?.length != 1 && item.id === "all") || item?.departId?.length > 0
+        (item) =>
+          (tempUserData?.results?.length != 1 && item.id === "all") ||
+          item?.departId?.length > 0
       );
       tempUserData.departments = tempUserData?.departments?.filter(
         (item, index) => item != departId
@@ -153,66 +166,112 @@ const UserSelect = ({ user, setUser, department, editItem, userData, setUserData
     }
   }, [department?.data?.length]);
 
-
   return (
-    <Box sx={{
-      color: "#1F1F1F", display: 'flex', gap: '24px', mt: 4.5,
-      flexWrap: 'wrap',
-      flexDirection: { xs: 'column', sm: 'row' },
-      alignItems: { xs: 'center', sm: 'start' },
-      height: '100%'
-    }}>
-      {!!userData?.results?.length ? userData?.results?.map((item, index) =>
-        <Box sx={{
-          display: 'flex',
-          alignItems: 'center',
-          p: "12px 24px",
-          gap: '18px',
-          width: 'calc(33.33% - 16px)',
-          minWidth: '220px',
-          maxWidth:  '300px',
-          height: '72px',
-          borderRadius: '7px',
-          border: user?.includes(item?.id) ? '1px solid #3447D4' : "none",
-          background: '#FFF',
-          boxShadow: '0px 4px 39px 0px rgba(81, 69, 159, 0.08)',
-          cursor: 'pointer',
-          position: 'relative'
-        }}
-          onClick={() => handleChange(item)}
+    <Box
+      sx={{
+        color: "#1F1F1F",
+        display: "flex",
+        gap: "24px",
+        mt: 4.5,
+        flexWrap: "wrap",
+        flexDirection: { xs: "column", sm: "row" },
+        alignItems: { xs: "center", sm: "start" },
+        height: "100%",
+      }}
+    >
+      {!!userData?.results?.length ? (
+        userData?.results?.map((item, index) => (
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              p: "12px 24px",
+              gap: "18px",
+              width: "calc(33.33% - 16px)",
+              minWidth: "220px",
+              maxWidth: "300px",
+              height: "72px",
+              borderRadius: "7px",
+              border: user?.includes(item?.id) ? "1px solid #3447D4" : "none",
+              background: "#FFF",
+              boxShadow: "0px 4px 39px 0px rgba(81, 69, 159, 0.08)",
+              cursor: "pointer",
+              position: "relative",
+            }}
+            onClick={() => handleChange(item)}
+          >
+            {!!user?.includes(item?.id) && (
+              <Box
+                component={"img"}
+                src={IMAGES.tick2}
+                sx={{
+                  width: "26px",
+                  height: "26px",
+                  position: "absolute",
+                  top: "-12px",
+                  right: "-6.5px",
+                }}
+              />
+            )}
+            <Box
+              sx={{
+                width: "47px",
+                height: "47px",
+                borderRadius: "27px",
+              }}
+              component={"img"}
+              src={
+                index % 3 === 0
+                  ? IMAGES.notification1
+                  : index % 3 === 1
+                  ? IMAGES.notification3
+                  : IMAGES.notification4
+              }
+            />
+            <Typography
+              sx={{
+                color: "#1F1F1F",
+                fontFamily: "Rubik",
+                fontSize: "20px",
+                fontWeight: "400",
+                width: "100%",
+                height: "30px",
+                lineHeight: "30px",
+                display: "inline",
+                wordBreak: "break-all",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {item?.first_name + " " + item?.last_name}
+            </Typography>
+          </Box>
+        ))
+      ) : (
+        <Box
+          sx={{
+            display: "flex",
+            flexGrow: 1,
+            flex: 1,
+            height: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          {!!user?.includes(item?.id) && <Box component={"img"} src={IMAGES.tick2} sx={{ width: '26px', height: '26px', position: "absolute", top: '-12px', right: '-6.5px' }} />}
-          <Box sx={{
-            width: '47px',
-            height: '47px',
-            borderRadius: '27px',
-          }} component={"img"} src={index % 3 === 0 ? IMAGES.notification1 : index % 3 === 1 ? IMAGES.notification3 : IMAGES.notification4} />
-          <Typography sx={{
-            color: '#1F1F1F',
-            fontFamily: 'Rubik',
-            fontSize: '20px',
-            fontWeight: '400',
-            width: '100%',
-            height: '30px',
-            lineHeight: '30px',
-            display: 'inline',
-            wordBreak: 'break-all',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            whiteSpace: 'nowrap',
-          }}>{item?.first_name + " " + item?.last_name}</Typography>
+          <Typography
+            sx={{
+              color: "#1F1F1F",
+              fontFamily: "Rubik",
+              fontSize: { xs: "14px", sm: "16px", md: "20px" },
+              fontWeight: "400",
+              textAlign: "center",
+            }}
+          >
+            Please select department to assign users
+          </Typography>
         </Box>
-      ) :
-        <Box sx={{ display: 'flex', flexGrow: 1, flex: 1, height: '100%', alignItems: 'center', justifyContent: 'center' }}>
-          <Typography sx={{
-            color: '#1F1F1F',
-            fontFamily: 'Rubik',
-            fontSize: {xs: '14px', sm: '16px', md: '20px'},
-            fontWeight: '400',
-            textAlign: 'center'
-          }}>Please select department to assign users</Typography>
-        </Box>
-      }
+      )}
     </Box>
   );
 };

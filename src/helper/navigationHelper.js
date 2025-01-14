@@ -65,6 +65,7 @@ export const userSideOptions = (isAdmin, isSuperAdmin, isUser) => {
       slug: "teams",
       path: "/my-teams",
     },
+   
     isUser && {
       title: "My Trainings",
       icon: IMAGES.training2,

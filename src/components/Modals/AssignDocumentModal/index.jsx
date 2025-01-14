@@ -21,6 +21,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import CustomFormControl from "../../CustomFormControl";
 import { ArrowDropDownIcon } from "@mui/x-date-pickers";
 import useWindowDimensions from "../../../hooks/windowDimensions";
+import emailjs from "emailjs-com";
 
 const AssignDocumentModal = ({
   open,
@@ -37,7 +38,7 @@ const AssignDocumentModal = ({
   const [reminderValue, setReminderValue] = useState();
   const [department, setDepartment] = useState({});
   const { file, index, assigned_users, ...others } = editItem;
-  console.log(department);
+  // console.log(department);
   const [assignedDepartments, setAssignedDepartments] = useState([]);
   const [files, setFile] = useState(null);
   const [fileName, setFileName] = useState(false);
@@ -45,6 +46,62 @@ const AssignDocumentModal = ({
   const [user, setUser] = useState(assigned_users);
   const [userData, setUserData] = useState([]);
   const { departId } = useParams();
+
+  const [emailUserSelect, setEmailUserSelect] = useState([]);
+
+  const handleEmailSubmit = async (e, emailList) => {
+    e.preventDefault();
+    // setIsSending(true);
+
+    try {
+      for (const [email, name] of emailList) {
+        const response = await emailjs.send(
+          "service_t8srnau",
+          "template_dpsymob",
+          {
+            to_name: name,
+            to_email: email,
+          },
+          "yD2XGJhCWpvQvaZIR"
+        );
+        console.log(
+          `Email sent to ${name} (${email}):`,
+          response.status,
+          response.text
+        );
+      }
+      // alert("All emails sent successfully!");
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      alert("Failed to send some emails. Please try again later.");
+    } finally {
+      // setIsSending(false);
+    }
+  };
+  // const handleEmailSubmit = async (e, list) => {
+  //   e.preventDefault();
+  //   // setIsSending(true);
+
+  //   try {
+  //     const response = await emailjs.send(
+  //       "service_t8srnau",
+  //       "template_dpsymob",
+  //       {
+  //         to_name: "Mazhar",
+  //         to_email: "mk0906145@gmail.com",
+  //       },
+  //       "yD2XGJhCWpvQvaZIR"
+  //     );
+  //     alert("Email sent successfully!");
+  //     console.log("Success:", response.status, response.text);
+  //   } catch (error) {
+  //     console.error("Failed to send email:", error);
+  //     alert("Failed to send email. Please try again later.");
+  //   } finally {
+  //     // setIsSending(false);
+  //   }
+  // };
+
   const reminderArray = [
     { name: "Daily", id: "daily" },
     { name: "3 days in a Week", id: "3_days_a_week" },
@@ -146,6 +203,8 @@ const AssignDocumentModal = ({
         if (!isPresent) dispatch(addDocument(tempData));
       }
       console.log("yea hai :", updateData);
+      console.log("data payload : ", payload);
+      // console.log("updated userdata list", userData);
       toast.success(
         `Document successfully ${!editItem ? "uploaded" : "updated"}`
       );
@@ -354,6 +413,8 @@ const AssignDocumentModal = ({
                 setUserData={setUserData}
                 department={department}
                 editItem={editItem}
+                emailUserSelect={emailUserSelect}
+                setEmailUserSelect={setEmailUserSelect}
               />
             </Box>
           </Box>
@@ -404,7 +465,10 @@ const AssignDocumentModal = ({
                     boxShadow: "0px 4px 39px 0px rgba(81, 69, 159, 0.08)",
                     position: "relative",
                   }}
-                  onClick={() => handleChange(item)}
+                  onClick={() => {
+                    handleChange(item);
+                    console.log(item);
+                  }}
                 >
                   <Box
                     sx={{
@@ -474,7 +538,17 @@ const AssignDocumentModal = ({
               loading={loader}
               color="secondary"
               buttonText={"Assign Trainees"}
-              onClick={handleSubmit}
+              onClick={(e) => {
+                console.log("xxxxxxxxxxxx", userData.results);
+                const emails = userData.results.map((item) => [
+                  item.email,
+                  item.first_name,
+                ]);
+
+                handleEmailSubmit(e, emails);
+                handleSubmit();
+                //
+              }}
               disable={
                 !!editItem
                   ? !department?.data?.length && !isFile
