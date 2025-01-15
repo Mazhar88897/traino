@@ -539,15 +539,14 @@ const AssignDocumentModal = ({
               color="secondary"
               buttonText={"Assign Trainees"}
               onClick={(e) => {
-                console.log("xxxxxxxxxxxx", userData.results);
-                const emails = userData.results.map((item) => [
-                  item.email,
-                  item.first_name,
-                ]);
-
-                handleEmailSubmit(e, emails);
+                // console.log("xxxxxxxxxxxx", userData.results);
+                // const emails = userData.results.map((item) => [
+                //   item.email,
+                //   item.first_name,
+                // ]);
+                // console.log("departement   ggggg emails", emailUserSelect);
+                handleEmailSubmit(e, emailUserSelect);
                 handleSubmit();
-                //
               }}
               disable={
                 !!editItem

@@ -27,9 +27,34 @@ const UserSelect = ({
   emailUserSelect,
   setEmailUserSelect,
 }) => {
+  // const [userList, setUserList] = useState([]);
+
+  const handleListClick = (data) => {
+    const { email, first_name, last_name } = data;
+
+    // Check if the email already exists in the userList
+    const emailExists = emailUserSelect.some((user) => user[0] === email);
+
+    if (!emailExists) {
+      // Add new user data to the list
+      setEmailUserSelect((prevList) => [
+        ...prevList,
+        [email, `${first_name} ${last_name}`],
+      ]);
+    } else {
+      // Remove the existing entry with the matching email and add the updated one
+      setEmailUserSelect((prevList) => [
+        ...prevList.filter((user) => user[0] !== email),
+      ]);
+    }
+    // setEmailUserSelect(userList);
+  };
+
   const [tempUsers, setTempUsers] = useState([]);
   const handleChange = (item) => {
     const value = item;
+    console.log("handle parser", item);
+    console.log("user parser", user);
 
     if (!user?.includes("all") && value?.id === "all") {
       let tempData = [];
@@ -50,7 +75,7 @@ const UserSelect = ({
       );
     }
     // console.log(item);
-    console.log(userData.results);
+    console.log("userdata from click", userData.results);
   };
 
   const { access, company_id } = useSelector(selectUser);
@@ -192,15 +217,24 @@ const UserSelect = ({
               maxWidth: "300px",
               height: "72px",
               borderRadius: "7px",
-              border: user?.includes(item?.id) ? "1px solid #3447D4" : "none",
+              border: emailUserSelect.some((entry) => entry[0] === item.email)
+                ? "1px solid #3447D4"
+                : "none",
               background: "#FFF",
               boxShadow: "0px 4px 39px 0px rgba(81, 69, 159, 0.08)",
               cursor: "pointer",
               position: "relative",
             }}
-            onClick={() => handleChange(item)}
+            onClick={() => {
+              handleChange(item);
+              handleListClick(item);
+              console.log("Updated List:", emailUserSelect);
+            }}
+            // onClick={() => {
+            //   alert("hello");
+            // }}
           >
-            {!!user?.includes(item?.id) && (
+            {emailUserSelect.some((entry) => entry[0] === item.email) && (
               <Box
                 component={"img"}
                 src={IMAGES.tick2}
