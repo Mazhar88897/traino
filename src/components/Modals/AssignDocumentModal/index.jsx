@@ -78,6 +78,55 @@ const AssignDocumentModal = ({
       // setIsSending(false);
     }
   };
+  const handleEmailSubmitResedule = async (e, emailList, repeatTime) => {
+    e.preventDefault();
+
+    const repeatIntervals = {
+      Daily: 24 * 60 * 60 * 1000, // 1 day in milliseconds
+      "3 days in a Week": (7 / 3) * 24 * 60 * 60 * 1000, // Approx interval for 3 days a week
+      Weekly: 7 * 24 * 60 * 60 * 1000, // 1 week
+      Monthly: 30 * 24 * 60 * 60 * 1000, // Approx 30 days
+      Minute: 1 * 60 * 1000, // 1 minute in milliseconds
+    };
+
+    const sendEmails = async () => {
+      try {
+        for (const [email, name] of emailList) {
+          const response = await emailjs.send(
+            "service_t8srnau",
+            "template_dpsymob",
+            {
+              to_name: name,
+              to_email: email,
+            },
+            "yD2XGJhCWpvQvaZIR"
+          );
+          console.log(
+            `Email sent to ${name} (${email}):`,
+            response.status,
+            response.text
+          );
+        }
+      } catch (error) {
+        console.error("Failed to send email:", error);
+        alert("Failed to send some emails. Please try again later.");
+      }
+    };
+
+    // Initial email sending
+    await sendEmails();
+
+    // Schedule future emails
+    if (repeatIntervals[repeatTime]) {
+      setInterval(() => {
+        sendEmails();
+      }, repeatIntervals[repeatTime]);
+    } else {
+      console.error("Invalid repeat time specified:", repeatTime);
+      alert("Invalid repeat time. Please select a valid option.");
+    }
+  };
+
   // const handleEmailSubmit = async (e, list) => {
   //   e.preventDefault();
   //   // setIsSending(true);
@@ -101,6 +150,18 @@ const AssignDocumentModal = ({
   //     // setIsSending(false);
   //   }
   // };
+  const handleReminderEmailClick = (event) => {
+    const selectedId = event?.target?.value || ""; // Safely handle undefined value
+    // const selectedReminder = reminderArray.find(
+    //   (reminder) => reminder.id === selectedId
+    // );
+
+    // if (selectedReminder) {
+    //   alert(`Selected Reminder: ${selectedReminder.name}`);
+    // } else {
+    //   alert("No reminder selected");
+    // }
+  };
 
   const reminderArray = [
     { name: "Daily", id: "daily" },
@@ -111,7 +172,10 @@ const AssignDocumentModal = ({
   const { height, width } = useWindowDimensions();
 
   const handleClick = (e) => {
-    setReminderValue(e?.target?.value);
+    setReminderValue(e?.target?.value?.id);
+    // alert(reminderValue);
+    // alert(e.target.name);
+    // console.log(reminderValue)
   };
 
   const handleChange = (file) => {
@@ -398,7 +462,10 @@ const AssignDocumentModal = ({
                       value={reminderValue}
                       objectKey={"name"}
                       array={reminderArray}
-                      handleChange={handleClick}
+                      handleChange={() => {
+                        handleClick();
+                        handleReminderEmailClick();
+                      }}
                       placeholder={"Set Reminder"}
                       id="reminder"
                       customIcon={ArrowDropDownIcon}
