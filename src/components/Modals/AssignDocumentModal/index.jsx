@@ -53,7 +53,7 @@ const AssignDocumentModal = ({
   const [emailUserSelect, setEmailUserSelect] = useState([]);
   const { keyPoints } = useSelector(selectSummaryAndKeyPoints);
   const sendAssignRequest = async () => {
-    const url = `${process.env.REACT_APP_EMAIL_URL}api/send-emails/`; // Replace with your API endpoint
+    const url = `${process.env.REACT_APP_BASE_URL}/send-emails/`; // Replace with your API endpoint
     const body = {
       emails: emailUserSelect,
     };
@@ -79,7 +79,7 @@ const AssignDocumentModal = ({
   };
 
   const sendReminderRequest = async () => {
-    const url = `${process.env.REACT_APP_EMAIL_URL}api/reminder-send-emails/`; // Replace with your API endpoint
+    const url = `${process.env.REACT_APP_BASE_URL}/reminder-send-emails/`; // Replace with your API endpoint
     const body = {
       emails: emailUserSelect,
       schedule: "daily",
