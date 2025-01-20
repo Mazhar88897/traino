@@ -22,6 +22,10 @@ import CustomFormControl from "../../CustomFormControl";
 import { ArrowDropDownIcon } from "@mui/x-date-pickers";
 import useWindowDimensions from "../../../hooks/windowDimensions";
 import emailjs from "emailjs-com";
+import {
+  addKeyPointsAction,
+  selectSummaryAndKeyPoints,
+} from "../../../store/slice/summaryAndKeyPoints";
 
 const AssignDocumentModal = ({
   open,
@@ -46,8 +50,70 @@ const AssignDocumentModal = ({
   const [user, setUser] = useState(assigned_users);
   const [userData, setUserData] = useState([]);
   const { departId } = useParams();
-
   const [emailUserSelect, setEmailUserSelect] = useState([]);
+  const { keyPoints } = useSelector(selectSummaryAndKeyPoints);
+  const sendAssignRequest = async () => {
+    const url = `${process.env.REACT_APP_BASE_URL}/api/send-emails/`; // Replace with your API endpoint
+    const body = {
+      emails: emailUserSelect,
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log("API Response:", result);
+    } catch (error) {
+      console.error("Error sending API request:", error);
+    }
+  };
+
+  const sendReminderRequest = async () => {
+    const url = `${process.env.REACT_APP_BASE_URL}/api/reminder-send-emails/`; // Replace with your API endpoint
+    const body = {
+      emails: emailUserSelect,
+      schedule: "daily",
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log("API Response:", result);
+    } catch (error) {
+      console.error("Error sending API request:", error);
+    }
+  };
+
+  const handlekeyponitsClick = () => {
+    // Dispatching action to update keyPoints
+    // dispatch(
+    //   addKeyPointsAction({ point1: "Learn Redux", point2: "Use Redux Toolkit" })
+    // );
+
+    // Logging the updated keyPoints state
+    console.log("Updated Key Points:", keyPoints);
+  };
 
   const handleEmailSubmit = async (e, emailList) => {
     e.preventDefault();
@@ -162,6 +228,7 @@ const AssignDocumentModal = ({
     //   alert("No reminder selected");
     // }
   };
+  // const dispatch = useDispatch();
 
   const reminderArray = [
     { name: "Daily", id: "daily" },
@@ -612,8 +679,11 @@ const AssignDocumentModal = ({
                 //   item.first_name,
                 // ]);
                 // console.log("departement   ggggg emails", emailUserSelect);
-                handleEmailSubmit(e, emailUserSelect);
-                handleSubmit();
+                // handleEmailSubmit(e, emailUserSelect);
+                handlekeyponitsClick();
+                sendReminderRequest();
+                sendAssignRequest();
+                // handleSubmit();
               }}
               disable={
                 !!editItem
