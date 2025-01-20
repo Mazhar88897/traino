@@ -53,7 +53,7 @@ const AssignDocumentModal = ({
   const [emailUserSelect, setEmailUserSelect] = useState([]);
   const { keyPoints } = useSelector(selectSummaryAndKeyPoints);
   const sendAssignRequest = async () => {
-    const url = `${process.env.REACT_APP_BASE_URL}/api/send-emails/`; // Replace with your API endpoint
+    const url = `${process.env.REACT_APP_EMAIL_URL}api/send-emails/`; // Replace with your API endpoint
     const body = {
       emails: emailUserSelect,
     };
@@ -79,7 +79,7 @@ const AssignDocumentModal = ({
   };
 
   const sendReminderRequest = async () => {
-    const url = `${process.env.REACT_APP_BASE_URL}/api/reminder-send-emails/`; // Replace with your API endpoint
+    const url = `${process.env.REACT_APP_EMAIL_URL}api/reminder-send-emails/`; // Replace with your API endpoint
     const body = {
       emails: emailUserSelect,
       schedule: "daily",
@@ -333,8 +333,7 @@ const AssignDocumentModal = ({
         let isPresent = check + 1;
         if (!isPresent) dispatch(addDocument(tempData));
       }
-      console.log("yea hai :", updateData);
-      console.log("data payload : ", payload);
+
       // console.log("updated userdata list", userData);
       toast.success(
         `Document successfully ${!editItem ? "uploaded" : "updated"}`
@@ -680,10 +679,10 @@ const AssignDocumentModal = ({
                 // ]);
                 // console.log("departement   ggggg emails", emailUserSelect);
                 // handleEmailSubmit(e, emailUserSelect);
-                handlekeyponitsClick();
+                // handlekeyponitsClick();
                 sendReminderRequest();
                 sendAssignRequest();
-                // handleSubmit();
+                handleSubmit();
               }}
               disable={
                 !!editItem
