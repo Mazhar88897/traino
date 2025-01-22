@@ -59,7 +59,7 @@ export const Style = {
     justifyContent: "center",
     cursor: "pointer",
     fontFamily: "Rubik",
-    fontSize: { xs: "14px", xl: "16px" },
+    fontSize: { xs: "16px", xl: "18px" },
     fontStyle: "normal",
     fontWeight: path ? "500" : "400",
     fontWeight: "400",
@@ -82,8 +82,8 @@ export const Style = {
   logoPara: {
     color: "#151515",
     fontFamily: "Rubik",
-    fontSize: "24px",
-    lineHeight: "28.44px",
+    fontSize: { xs: "24px", sm: "28px", lg: "28px", xl: "28px" },
+    lineHeight: { xs: "28px", sm: "30px", lg: "32px", xl: "34px" },
     fontWeight: "600",
   },
   childrenWrapper: (isDrawerOpen, isFull, isLowPad, width) => ({

@@ -99,11 +99,11 @@ const DepartmentFormControl = ({
       multi={isAssign}
       sx={{
         display: "flex",
-        minWidth: { xs: "160px !important", xl: "200px !important" },
-        maxWidth: { xs: "160px !important", xl: "200px !important" },
+        minWidth: { xs: "100px !important", xl: "200px !important" },
+        maxWidth: { xs: "100px !important", xl: "200px !important" },
       }}
       selectSx={{
-        height: { xs: "30px", xl: "50px" },
+        height: { xs: "35px", xl: "50px" },
         color: "#4B4B4B",
         fontFamily: "Rubik",
         // height: "30px",
@@ -114,7 +114,7 @@ const DepartmentFormControl = ({
       value={val}
       handleChange={handleChange}
       menuSx={{
-        height: { xs: "30px", xl: "50px" },
+        height: { xs: "20px", xl: "50px" },
         // height: "30px",
         color: "#4B4B4B",
         fontFamily: "Rubik",

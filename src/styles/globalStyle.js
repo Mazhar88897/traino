@@ -31,7 +31,7 @@ export const globalStyle = {
   HeroBanner: (isSection, isFull, isTabShown) => ({
     ml: isTabShown ? { xs: "4px", sm: "-26px" } : 0,
     mx: isSection && !isTabShown && { xs: "auto", sm: "auto" },
-    pt: isSection ? { xs: "8px", sm: "12px", md: "12px" } : "34px",
+    pt: isSection ? { xs: "2px", sm: "12px", md: "12px" } : "34px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

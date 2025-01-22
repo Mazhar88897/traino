@@ -80,7 +80,7 @@ export const Style = {
     mt: 1,
     color: "#4B4B4B",
     fontFamily: "Rubik",
-    fontSize: "20px",
+    fontSize: { xs: "16px", sm: "18px", md: "20px", lg: "20px", xl: "20px" },
     fontWeight: "600",
     lineHeight: "213%",
   },
@@ -131,9 +131,9 @@ export const Style = {
   allTrainingHeading: {
     color: "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: "20px",
+    fontSize: { xs: "18px", sm: "18px", md: "20px", lg: "20px", xl: "20px" },
     fontWeight: "400",
-    lineHeight: "35px",
+    lineHeight: { xs: "22px", sm: "28px", md: "35px", lg: "35px", xl: "35px" },
   },
   noRecordMain: {
     display: "flex",

@@ -32,9 +32,9 @@ export const Style = {
   title: {
     color: "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: { xs: "22px", xl: "30px" },
+    fontSize: { xs: "18px", sm: "20px", md: "30px", lg: "30px", xl: "30px" },
     fontWeight: "500",
-    lineHeight: "41px",
+    lineHeight: { xs: "30px", sm: "30px", md: "41px", lg: "41px", xl: "41px" },
     letterSpacing: "-0.28px",
   },
   contentContainer: {

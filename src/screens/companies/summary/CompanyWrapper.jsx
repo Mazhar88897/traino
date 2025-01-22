@@ -438,7 +438,7 @@ const CompanyWrapper = ({
                     <Box
                       sx={{
                         display: "flex",
-                        gap: { xs: 1, sm: 2, md: 3 },
+                        gap: { xs: 0, sm: 2, md: 3 },
                         whiteSpace: "normal",
                       }}
                     >
@@ -468,7 +468,13 @@ const CompanyWrapper = ({
                             sx={{
                               color: "#1F1F1F",
                               fontFamily: "Rubik",
-                              fontSize: { xs: "22px", xl: "32px" },
+                              fontSize: {
+                                xs: "20px",
+                                sm: "22px",
+                                md: "22px",
+                                lg: "22px",
+                                xl: "32px",
+                              },
                               fontStyle: "normal",
                               fontWeight: "500",
                               width: "100%",
@@ -476,8 +482,20 @@ const CompanyWrapper = ({
                               overflow: "hidden",
                               textOverflow: "ellipsis",
                               whiteSpace: "nowrap",
-                              lineHeight: "42px",
-                              height: "42px",
+                              lineHeight: {
+                                xs: "22px",
+                                sm: "30px",
+                                md: "42px",
+                                lg: "42px",
+                                xl: "42px",
+                              },
+                              height: {
+                                xs: "24px",
+                                sm: "30px",
+                                md: "42px",
+                                lg: "42px",
+                                xl: "42px",
+                              },
                               display: "inline",
                             }}
                           >

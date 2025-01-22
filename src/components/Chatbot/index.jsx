@@ -217,7 +217,7 @@ const Chatbot = ({
           <Box sx={Style.titleContainer}>
             <Box
               sx={{
-                width: { xs: "28px", xl: "40px" },
+                // width: { xs: "28px", xl: "40px" },
                 height: { xs: "25px", xl: "32px" },
               }}
               component={"img"}

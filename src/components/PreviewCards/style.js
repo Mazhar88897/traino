@@ -142,7 +142,13 @@ export const Style = {
   },
   heading: (isDoc) => ({
     fontFamily: "Rubik",
-    fontSize: { xs: isDoc ? "20px" : "18px", xl: isDoc ? "18px" : "20px" },
+    fontSize: {
+      xs: isDoc ? "17px" : "17px",
+      sm: "20px",
+      md: "20px",
+      lg: "20px",
+      xl: isDoc ? "18px" : "20px",
+    },
     fontWeight: "500",
     color: "black",
     lineHeight: { xs: "25px", xl: "30px" },

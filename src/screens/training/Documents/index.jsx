@@ -320,6 +320,7 @@ const TrainingDocuments = () => {
       headingData={headingData}
       topBannerIcon={IMAGES.training}
       topBannerHeading={!isAdmin && "All Trainings"}
+      buttonSx={{ width: "full", background: "black" }}
       topBannerContent={
         !isAdmin && (
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
