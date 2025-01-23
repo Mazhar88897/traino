@@ -87,7 +87,7 @@ const AssignDocumentModal = ({
       document_id: file.id,
       doc_name: file.name,
       date: file.updated_at,
-      schedule: "daily",
+      // schedule: "daily",
     };
     console.log("body", body);
     try {
