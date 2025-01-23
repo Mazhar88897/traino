@@ -55,8 +55,8 @@ const QuizResult = ({ open, setOpen, data }) => {
           }}
         >
           <CircularProgressbar
-            value={data?.score || data?.Score || 0}
-            text={`${data?.score || data?.Score || 0}%`}
+            value={data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0}
+            text={`${data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0}%`}
             styles={buildStyles({
               rotation: 0.25,
               pathColor: `#3447D4`,

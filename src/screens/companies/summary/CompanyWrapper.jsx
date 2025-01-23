@@ -68,6 +68,9 @@ const CompanyWrapper = ({
   useEffect(() => {
     setActiveTab(section);
   }, [location]);
+  // useEffect(() => {
+  //   alert(percentage);
+  // }, [percentage]);
 
   const isActiveCondition = (val) => {
     const item = val?.tabName?.toLowerCase()?.replace(" ", "");
@@ -154,7 +157,7 @@ const CompanyWrapper = ({
                     x="50%"
                     dy="0"
                   >
-                    {`${percentage}%`}
+                    {`${percentage.toFixed(0)}%`}
                   </Typography>
                 }
                 styles={buildStyles({

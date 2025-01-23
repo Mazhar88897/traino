@@ -42,6 +42,7 @@ const AssignDocumentModal = ({
   const [reminderValue, setReminderValue] = useState();
   const [department, setDepartment] = useState({});
   const { file, index, assigned_users, ...others } = editItem;
+  const [fileEmail, setFileEmail] = useState();
   // console.log(department);
   const [assignedDepartments, setAssignedDepartments] = useState([]);
   const [files, setFile] = useState(null);
@@ -79,12 +80,14 @@ const AssignDocumentModal = ({
   };
 
   const sendReminderRequest = async () => {
+    // console.log("file data", file);
     const url = `${process.env.REACT_APP_BASE_URL}/reminder-send-emails/`; // Replace with your API endpoint
     const body = {
       emails: emailUserSelect,
+      fileData: file.id,
       schedule: "daily",
     };
-
+    console.log("body", body);
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -296,6 +299,8 @@ const AssignDocumentModal = ({
       ? departmentIds
       : [departId];
     try {
+      // console.log("here is the data", updateData);
+      setFileEmail(file);
       setLoader(true);
       if (editItem) {
         const tempData = await updateDocuments(
@@ -677,12 +682,14 @@ const AssignDocumentModal = ({
                 //   item.email,
                 //   item.first_name,
                 // ]);
-                // console.log("departement   ggggg emails", emailUserSelect);
+
                 // handleEmailSubmit(e, emailUserSelect);
                 // handlekeyponitsClick();
+
+                handleSubmit();
+                console.log(fileEmail);
                 sendReminderRequest();
                 sendAssignRequest();
-                handleSubmit();
               }}
               disable={
                 !!editItem
