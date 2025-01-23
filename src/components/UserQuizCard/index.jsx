@@ -32,14 +32,14 @@ const UserQuizCard = ({
         ...Style.card(isUser && !item?.result_status, width, drawer),
       }}
     >
-      {topRightIcon && score !== 0 && (
+      {/* {topRightIcon && score !== 0 && (
         <Box onClick={iconClick} sx={Style.topRightIcon}>
           {topRightIcon}
         </Box>
-      )}
+      )} */}
       <Box
         onClick={onClick}
-        mt={topRightIcon && -3}
+        mt={3}
         sx={{ ...Style.contentContainer, ...contentContainer }}
       >
         <Typography sx={{ ...Style.headings }}>{heading}</Typography>

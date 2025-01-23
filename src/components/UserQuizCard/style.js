@@ -59,6 +59,7 @@ export const Style = {
     position: "relative",
   }),
   topRightIcon: {
+    // background: "black",
     display: "flex",
     alignSelf: "flex-end",
     pr: 1,
