@@ -14,7 +14,7 @@ export const Style = {
   },
   content: {
     width: { xs: "100%", md: "100%" },
-    height: { xs: "100%", md: "100%" },
+    // height: { xs: "100%", md: "100%" },
     backgroundRepeat: "no-repeat",
     borderRadius: { xs: "4px", md: "22px" },
     backgroundImage: {

@@ -119,7 +119,8 @@ const PreviewCards = ({
     window.open(
       typeof data?.file == "string"
         ? data?.file
-        : `https://app.traino.ai/media/documents/` + data?.name
+        : `https://traino-testing-api.bizaffix.com/media/documents/` +
+            data?.name
     );
   };
   const condition = editItem?.index === index && !!editItem;

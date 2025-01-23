@@ -244,7 +244,8 @@ const Question = ({ percentage, setPercentage }) => {
                   <CustomButton
                     sx={Style.answerButton}
                     onClick={() => {
-                      handlePrevious();
+                      // handlePrevious();
+                      console.log("quizData", quizData);
                     }}
                     disable={!index}
                     buttonText={"Previous"}

@@ -217,12 +217,12 @@ const SignInFrom = () => {
               Remember me
             </Typography>
           </Box>
-          <Typography
+          {/* <Typography
             onClick={() => navigate("/forget-password")}
             sx={Style.forgetPassword}
           >
             Forgot Password?
-          </Typography>
+          </Typography> */}
         </Box>
         <CustomButton
           sx={Style.button(height)}

@@ -84,7 +84,9 @@ const AssignDocumentModal = ({
     const url = `${process.env.REACT_APP_BASE_URL}/reminder-send-emails/`; // Replace with your API endpoint
     const body = {
       emails: emailUserSelect,
-      fileData: file.id,
+      document_id: file.id,
+      doc_name: file.name,
+      date: file.updated_at,
       schedule: "daily",
     };
     console.log("body", body);
