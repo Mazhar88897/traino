@@ -108,6 +108,7 @@ const TopBanner = ({
                     key={index}
                     component={"span"}
                     sx={{
+                      display: { xs: "none", sm: "flex" },
                       my: { xs: "13px", sm: "18px", md: "20px" },
                       fontSize:
                         index !== headingData?.length - 1
