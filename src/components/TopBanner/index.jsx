@@ -98,7 +98,14 @@ const TopBanner = ({
                   e?.changedTouches[0]?.screenX - scrollX;
             }}
             id="scrollable"
-            sx={heading ? globalStyle.headings : globalStyle.headingMain}
+            sx={
+              heading
+                ? globalStyle.headings
+                : {
+                    ...globalStyle.headingMain,
+                    display: { xs: "none", sm: "block" },
+                  }
+            }
           >
             {heading
               ? heading
@@ -108,7 +115,7 @@ const TopBanner = ({
                     key={index}
                     component={"span"}
                     sx={{
-                      display: { xs: "none", sm: "flex" },
+                      // display: { xs: "none", sm: "block" },
                       my: { xs: "13px", sm: "18px", md: "20px" },
                       fontSize:
                         index !== headingData?.length - 1
