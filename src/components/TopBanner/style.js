@@ -9,7 +9,7 @@ export const Style = {
     boxSizing: "border-box",
     width: "100%",
     maxWidth: { xs: isDashboard ? "1100px" : "1320px", xl: "1470px" },
-    mx: { xs: "-3px" },
+    // mx: { xs: "-3px" },
     mt: { xs: "-10px", sm: "0px", md: "0px", lg: "0px", xl: "0px" },
   }),
   headingContainer: (isDrawer) => ({

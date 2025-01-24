@@ -31,7 +31,9 @@ export const globalStyle = {
   HeroBanner: (isSection, isFull, isTabShown) => ({
     ml: isTabShown ? { xs: "4px", sm: "-26px" } : 0,
     mx: isSection && !isTabShown && { xs: "auto", sm: "auto" },
-    pt: isSection ? { xs: "2px", sm: "12px", md: "12px" } : "34px",
+    pt: isSection
+      ? { xs: "0px", sm: "12px", md: "12px" }
+      : { xs: "15px", sm: "36px", md: "36px" },
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -116,7 +118,7 @@ export const globalStyle = {
     justifyContent: "start",
     flexGrow: 1,
     width: "100%",
-    gap: { xs: 1, sm: "10px", md: "13px" },
+    gap: { xs: 0, sm: "10px", md: "13px" },
     boxSizing: "border-box",
     flexWrap: "nowrap",
     pb: "5px",
@@ -135,7 +137,7 @@ export const globalStyle = {
     pl: isFull ? "5px" : 0,
     pr: isFull ? 8 : 0,
     width: {
-      xs: isFull ? "100%" : "calc(100vw - 55px)",
+      xs: isFull ? "100%" : "100%",
       sm: isFull
         ? "100%"
         : isDrawer
