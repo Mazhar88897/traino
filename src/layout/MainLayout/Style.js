@@ -35,7 +35,7 @@ export const Style = {
   }),
   listItemIcon: (open) => ({
     minWidth: 0,
-    mr: open ? 1.5 : "auto",
+    mr: open ? 1 : "auto",
     justifyContent: "center",
   }),
   signoutContainer: (path, open) => ({

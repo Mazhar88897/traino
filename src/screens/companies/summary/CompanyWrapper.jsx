@@ -472,7 +472,7 @@ const CompanyWrapper = ({
                               color: "#1F1F1F",
                               fontFamily: "Rubik",
                               fontSize: {
-                                xs: "20px",
+                                xs: "22px",
                                 sm: "22px",
                                 md: "22px",
                                 lg: "22px",
@@ -486,7 +486,7 @@ const CompanyWrapper = ({
                               textOverflow: "ellipsis",
                               whiteSpace: "nowrap",
                               lineHeight: {
-                                xs: "22px",
+                                xs: "26px",
                                 sm: "30px",
                                 md: "42px",
                                 lg: "42px",

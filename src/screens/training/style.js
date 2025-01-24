@@ -77,6 +77,7 @@ export const Style = {
     gap: "20px",
   },
   totalNo: {
+    display: { xs: "none", sm: "block" },
     mt: 1,
     color: "#4B4B4B",
     fontFamily: "Rubik",

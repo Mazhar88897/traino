@@ -42,7 +42,8 @@ export const Style = {
   menuIcon: { width: "28px", mt: "3px" },
   icon: { height: { xs: 40, md: 60 }, width: { xs: 50, md: 80 } },
   pageIconContainer: {
-    display: "flex",
+    display: { xs: "none", sm: "flex" },
+    // display: "flex",
     width: "100%",
     width: { xs: "calc(100% - 40px)", sm: "100%" },
     gap: { xs: "6px", md: "18px" },

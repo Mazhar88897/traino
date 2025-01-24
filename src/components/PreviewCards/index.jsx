@@ -313,7 +313,7 @@ const PreviewCards = ({
                 </>
               )}
             </form>
-            <Box sx={{ m: (path === "trainings" || isUser) && "16px 0 8px" }}>
+            <Box sx={{ m: (path === "trainings" || isUser) && "2px 0 8px" }}>
               {!isUser && path === "my-teams" && (
                 <Box sx={Style.viewBox}>
                   <FiUsers style={Style.userIcon} />
@@ -331,7 +331,7 @@ const PreviewCards = ({
                       performance-based incentives
                     </Typography>
                   </Typography>
-                  <Typography sx={{ ...Style.spaceBetween, mt: "5px", mb: 2 }}>
+                  <Typography sx={{ ...Style.spaceBetween, mt: 1.5, mb: 1.5 }}>
                     <Typography
                       component={"span"}
                       sx={Style.linksOnPreviewCard}
@@ -372,9 +372,9 @@ const PreviewCards = ({
                       }`}
                     </Typography> */}
                   </Typography>
-                  <Box sx={{ mt: 2 }}>
+                  <Box>
                     {isProgressBar && (
-                      <Box sx={{ ...Style.spaceBetweenBar }}>
+                      <Box sx={{ ...Style.spaceBetweenBar, mb: "8px" }}>
                         <ProgressBar
                           sx={{ mt: "1px" }}
                           dots={width > 900 ? 14 : width > 600 ? 14 : 14}
@@ -391,7 +391,7 @@ const PreviewCards = ({
                       width: "100%",
                       display: "flex",
                       justifyContent: "space-between",
-                      pt: "10px",
+                      pt: "1px",
                     }}
                   >
                     <Typography sx={Style.estimatedtimetext}>
