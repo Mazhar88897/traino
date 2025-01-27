@@ -26,8 +26,8 @@ export const Style = {
     //   xl: "calc(20% - 19px)",
     // },
     // maxWidth: "300px",
-    height: { xs: "132.21px", sm: "157px", md: "157px", lg: "157px" },
-    width: { xs: "165px", sm: "196px", md: "196px", lg: "196px" },
+    height: { xs: "125px", sm: "157px", md: "157px", lg: "157px" },
+    width: { xs: "160px", sm: "196px", md: "196px", lg: "196px" },
     alignItems: "center",
     borderRadius: "10px",
     border: "2px dashed #B8C1FF",
@@ -73,6 +73,7 @@ export const Style = {
     justifyContent: "start",
     flexDirection: "column",
     height: "80%",
+    mt: { xs: 2, sm: 3 },
   },
   headings: {
     color: "#280A82",

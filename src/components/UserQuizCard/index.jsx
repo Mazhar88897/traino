@@ -39,7 +39,7 @@ const UserQuizCard = ({
       )} */}
       <Box
         onClick={onClick}
-        mt={3}
+        // mt={3}
         sx={{ ...Style.contentContainer, ...contentContainer }}
       >
         <Typography sx={{ ...Style.headings }}>{heading}</Typography>

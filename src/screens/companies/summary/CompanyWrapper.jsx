@@ -93,9 +93,10 @@ const CompanyWrapper = ({
           <Box
             component={"img"}
             sx={{
-              width: "23px",
-              height: "22px",
+              width: "20px",
+              height: "18px",
               display: { sm: "none", lg: "none", xl: "none" },
+              mr: "15px",
             }}
             src={IMAGES.whiteBack}
             onClick={() => {
@@ -398,6 +399,7 @@ const CompanyWrapper = ({
                         sx={{
                           width: { xs: "23.38px", sm: "30px", md: "30px" },
                           height: { xs: "23.38px", sm: "30px", md: "30px" },
+                          mr: "6px",
                         }}
                         component={"img"}
                         src={val.src}

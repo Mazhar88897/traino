@@ -2,9 +2,10 @@ import { COLORS, IMAGES } from "../../theme";
 
 export const Style = {
   main: {
-    width: { xs: "90%", md: "65.7%" },
-    height: { xs: "35%", md: "100%" },
+    width: { xs: "100%", md: "65.7%" },
+    height: { xs: "40%", md: "100%" },
     maxWidth: "820px",
+
     backgroundColor: "white",
     boxSizing: "border-box",
     display: { xs: "flex", md: "flex" },
@@ -13,8 +14,9 @@ export const Style = {
     zIndex: 1,
   },
   content: {
-    width: { xs: "100%", md: "100%" },
-    // height: { xs: "100%", md: "100%" },
+    // background: "black",
+    width: { xs: "115%", md: "100%" },
+    height: { xs: "100%", md: "100%" },
     backgroundRepeat: "no-repeat",
     borderRadius: { xs: "4px", md: "22px" },
     backgroundImage: {
@@ -43,6 +45,7 @@ export const Style = {
     alignItems: "center",
     justifyContent: "center",
     color: COLORS.white,
+    p: "-10px",
   },
   welcomeHeading: {
     fontFamily: "serif",

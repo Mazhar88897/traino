@@ -19,7 +19,7 @@ export const Style = {
     justifyContent: "space-evenly",
     flexGrow: 1,
     height: "100%",
-    minHeight: "fit-content",
+    minHeight: "120px",
     width: { xs: "100%", md: "30%" },
     maxHeight: "780px",
     minWidth: "245px",
@@ -28,7 +28,7 @@ export const Style = {
     paddingBottom: { xs: "10px", md: "20px" },
   },
   child1: {
-    display: "flex",
+    display: { xs: "none", sm: "flex" },
     flexDirection: "column",
     alignItems: "center",
   },
@@ -77,19 +77,19 @@ export const Style = {
   child2: {
     display: "flex",
     flexDirection: "column",
-    pt: { xs: 3, md: 0 },
-    paddingBottom: { xs: "20px", md: "0px" },
+    pt: { xs: 1, md: 0 },
+    paddingBottom: { xs: "0px", md: "0px" },
     px: { xs: "16px", md: "28px", lg: "34px", xl: "40px" },
   },
   notificationText: {
     fontFamily: "Rubik",
-    fontSize: { xs: "18px", md: "20px", lg: "20px", xl: "20px" },
+    fontSize: { xs: "16px", md: "20px", lg: "20px", xl: "20px" },
     fontStyle: "normal",
     fontWeight: "500",
     lineHeight: "normal",
   },
   divider: {
-    mt: { xs: "10px", md: 2, lg: 2, xl: 2 },
+    mt: { xs: "5px", md: 2, lg: 2, xl: 2 },
     height: "1px",
     border: "0.6px solid rgba(218, 218, 218, 0.50)",
   },
@@ -98,15 +98,16 @@ export const Style = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    mt: { xs: "10px", md: 1, lg: 1, xl: 1 },
+    // m:
+    mt: { xs: "-3px", md: 1, lg: 1, xl: 1 },
   },
   notificationSectionText: {
     fontFamily: "Rubik",
-    fontSize: { xs: "16px", md: "14px", lg: "16px" },
+    fontSize: { xs: "14px", md: "14px", lg: "16px" },
     fontStyle: "normal",
     fontWeight: "400",
     lineHeight: "normal",
-    minWidth: "100px",
+    minWidth: "70px",
   },
   toggleStyle: (isFirst) => ({
     "& .MuiSwitch-switchBase": {
@@ -166,7 +167,7 @@ export const Style = {
   },
   profileInformationText: {
     fontFamily: "Rubik",
-    fontSize: { xs: "20px", md: "24px" },
+    fontSize: { xs: "16px", md: "24px" },
     fontStyle: "normal",
     fontWeight: "500",
     lineHeight: "normal",
@@ -197,7 +198,7 @@ export const Style = {
   tabsText: (selectedTab) => ({
     color: selectedTab ? "#3447D4" : "#4B4B4B",
     fontFamily: "Rubik",
-    fontSize: { xs: "16px", lg: "18px" },
+    fontSize: { xs: "15px", lg: "18px" },
     cursor: "pointer",
     mb: 1,
   }),

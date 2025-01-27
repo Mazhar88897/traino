@@ -210,7 +210,7 @@ export const Style = {
   },
   btn: {
     mt: { xs: 2, md: 4, lg: 6 },
-    maxWidth: "194px",
+    maxWidth: { xs: "164px", sm: "194px" },
     width: "100%",
     alignSelf: "end",
   },
@@ -223,7 +223,7 @@ export const Style = {
     gap: { xs: 1, md: 2, lg: 4.5 },
   },
   inputContainer: { maxWidth: { xs: "100%", md: "500px" }, width: "100%" },
-  editFormLabel: { fontSize: "16px", fontFamily: "Rubik", fontWeight: "400" },
+  editFormLabel: { fontSize: "14px", fontFamily: "Rubik", fontWeight: "400" },
   inputLabel: {
     color: "#4B4B4B",
     // background: { lg: "black" },

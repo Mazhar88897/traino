@@ -9,6 +9,7 @@ export const Style = {
     pt: !isFull ? "16px" : 0,
     boxSizing: "border-box",
     backgroundColor: isDarkBg ? "#FBFBFC" : "#FEFEFE",
+    // background: "black",
   }),
   headerContainer: {
     display: "flex",
@@ -27,6 +28,7 @@ export const Style = {
     minHeight: 44,
     justifyContent: open ? "initial" : "center",
     px: 2.5,
+    // background: "black",
     // mx: 1,
     borderRadius: "4px",
     "&:hover": {
@@ -35,7 +37,7 @@ export const Style = {
   }),
   listItemIcon: (open) => ({
     minWidth: 0,
-    mr: open ? 1 : "auto",
+    mr: open ? 0.5 : "auto",
     justifyContent: "center",
   }),
   signoutContainer: (path, open) => ({

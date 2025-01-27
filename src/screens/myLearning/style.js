@@ -14,10 +14,10 @@ export const Style = {
       md: "30px",
     },
     display: "flex",
-    gap: "30px 20px",
+    gap: { xs: "30px 10px", sm: "30px 20px" },
     flexWrap: "wrap",
     justifyContent: {
-      xs: width < 350 ? "center" : "start",
+      xs: width < 320 ? "center" : "start",
       sm: !!isDrawer && width < 712 ? "center" : "start",
       md: isUser && width < 931 ? "center" : "start",
       lg: "start",
@@ -70,7 +70,7 @@ export const Style = {
   question: (isLessHeight) => ({
     color: "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: isLessHeight ? "18px" : "14px",
+    fontSize: isLessHeight ? "16px" : "14px",
     fontWeight: "500",
     lineHeight: isLessHeight ? "22px" : "18px",
   }),
@@ -142,6 +142,7 @@ export const Style = {
   quizIconsContainer: {
     display: "flex",
     alignItems: "center",
+    ml: { xs: "-20px", sm: "0px" },
   },
   quizIcon: {
     width: { xs: "24px", sm: "31px", md: "31px" },
@@ -261,6 +262,7 @@ export const Style = {
     display: "flex",
     flexDirection: { xs: "column", md: "row" },
     justifyContent: { xs: "start", md: "space-between" },
+
     gap: "20px",
     width: "100%",
     position: "relative",
@@ -400,7 +402,7 @@ export const Style = {
     minWidth: "176px",
     fontSize: { xs: "22px" },
     width: {
-      xs: width < 450 ? "60%" : "calc(50% - 12px)",
+      xs: width < 450 ? "60%" : "calc(50% - 20px)",
       sm:
         !isDrawer && width > 750
           ? "calc(33% - 14px)"
@@ -422,6 +424,6 @@ export const Style = {
       xl: width > 1750 ? "calc(20% - 19px)" : "calc(25% - 18px)",
     },
     maxWidth: "300px",
-    height: { xs: "120px", sm: "140px", lg: "140px" },
+    height: { xs: "100px", sm: "140px", lg: "140px" },
   }),
 };
