@@ -62,6 +62,11 @@ const TrainingDocuments = () => {
   } = useSelector(selectUser);
 
   const navigate = useNavigate();
+
+  const [overview, setOverview] = useState("");
+  const [avgCompletionTime, setAvgCompletionTime] = useState();
+  const [dueDate, setDueDate] = useState();
+
   const { id, departId } = useParams();
   const [subdivision, setsubdivision] = useState("All Trainings");
   const handleSubDivision = (id) => {
@@ -280,7 +285,11 @@ const TrainingDocuments = () => {
   };
 
   const submit = async () => {
+    alert("hello");
     const payload = new FormData();
+    payload.append("overview", overview);
+    payload.append("avgCompletionTime", avgCompletionTime);
+    payload.append("dueDate", dueDate);
 
     if (files) {
       payload.append("file", files);
@@ -302,6 +311,9 @@ const TrainingDocuments = () => {
         file: files,
         name: fileName != files?.name ? fileName : files?.name,
         id: data?.created_documents[0],
+        overview: overview,
+        dueDate: dueDate,
+        avgCompletionTime: avgCompletionTime,
       };
       dispatch(addDocument(tempData));
       documentGet(true);
@@ -431,6 +443,12 @@ const TrainingDocuments = () => {
               isNew={true}
               tempFileName={fileName}
               setTempFileName={setFileName}
+              setDueDate={setDueDate}
+              setOverview={setOverview}
+              setAvgCompletionTime={setAvgCompletionTime}
+              overview={overview}
+              avgCompletionTime={avgCompletionTime}
+              dueDate={dueDate}
             />
             <Box sx={Style.uploadRightSide}>
               <Box sx={Style.dashedBox}>
@@ -502,40 +520,45 @@ const TrainingDocuments = () => {
                 )}
               >
                 {documentsData?.results?.map((val, index) => (
-                  <PreviewCards
-                    isProgressBar={presentTab === 2}
-                    isCompleted={presentTab === 3}
-                    key={index}
-                    data={val}
-                    handleClick={(event) => {
-                      if (!!isUser) {
-                        setOpenPreview(true);
-                        setPreviewData(val);
-                      } else {
-                        dispatch(selectedDocumentAction(val));
-                        navigate(
-                          isSuperAdmin
-                            ? `/trainings/company/${id}/document/${val?.id}/summary`
-                            : isAdmin
-                            ? `/trainings/document/${val?.id}/summary`
-                            : `/my-learning/document/${val?.id}/summary`,
-                          {
-                            state: {
-                              data: data,
-                              val: val,
-                              departData: state?.departData,
-                            },
-                          }
-                        );
-                      }
-                    }}
-                    isDownload={true}
-                    isDelete={isAdmin}
-                    isEdit={isAdmin}
-                    deleteIconClick={() => setOpenDeleteModal(val?.id)}
-                    editIconClick={() => openDrawer(val, index)}
-                    assignClickHandling={() => openAssignModal(val, index)}
-                  />
+                  <>
+                    {/* <button onClick={() => console.log(documentsData)}>
+                      click
+                    </button> */}
+                    <PreviewCards
+                      isProgressBar={presentTab === 2}
+                      isCompleted={presentTab === 3}
+                      key={index}
+                      data={val}
+                      handleClick={(event) => {
+                        if (!!isUser) {
+                          setOpenPreview(true);
+                          setPreviewData(val);
+                        } else {
+                          dispatch(selectedDocumentAction(val));
+                          navigate(
+                            isSuperAdmin
+                              ? `/trainings/company/${id}/document/${val?.id}/summary`
+                              : isAdmin
+                              ? `/trainings/document/${val?.id}/summary`
+                              : `/my-learning/document/${val?.id}/summary`,
+                            {
+                              state: {
+                                data: data,
+                                val: val,
+                                departData: state?.departData,
+                              },
+                            }
+                          );
+                        }
+                      }}
+                      isDownload={true}
+                      isDelete={isAdmin}
+                      isEdit={isAdmin}
+                      deleteIconClick={() => setOpenDeleteModal(val?.id)}
+                      editIconClick={() => openDrawer(val, index)}
+                      assignClickHandling={() => openAssignModal(val, index)}
+                    />
+                  </>
                 ))}
                 {isAdmin && documents?.count == 1 && (
                   <Box

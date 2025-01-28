@@ -29,10 +29,10 @@ export const Style = {
     fontWeight: "700",
   },
   rightContainer: (isSuperAdmin) => ({
-    width: { xs: "354px", lg: isSuperAdmin ? "calc(25% + 4px)" : "30%" },
+    width: { xs: "359.6px", lg: isSuperAdmin ? "calc(25% + 4px)" : "30%" },
     // justifyContent: "center",
     maxWidth: {
-      xs: "354px",
+      xs: "359.6px",
       lg: isSuperAdmin ? "282px" : "310px",
       xl: "380px",
     },

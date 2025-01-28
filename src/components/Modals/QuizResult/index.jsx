@@ -7,9 +7,12 @@ import CustomButton from "../../CustomButton";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useNavigate } from "react-router-dom";
-
-const QuizResult = ({ open, setOpen, data }) => {
+import { useLocation } from "react-router-dom";
+const QuizResult = ({ open, setOpen, data, questionsList }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const selectedDocData = location?.state?.val;
+  const length = (questionsList || []).length;
   return (
     <ModalWrapper open={open} setOpen={setOpen} sx={Style.main}>
       <Box
@@ -27,14 +30,18 @@ const QuizResult = ({ open, setOpen, data }) => {
         <Box
           sx={{ display: "flex", alignItems: "center", gap: { xs: 1, sm: 3 } }}
         >
-          <Typography sx={Style.timeSpent}>Time Spent: 2 hours</Typography>
+          {/* <Typography sx={Style.timeSpent}>Time Spent: 2 hours</Typography> */}
           <CloseIcon onClick={() => setOpen(false)} sx={Style.closeIcon} />
         </Box>
       </Box>
       <Typography sx={Style.finishPara}>
-        You finished and passed the “
+        You finished and{" "}
         <Typography component="span" sx={Style.courseName}>
-          Advanced Compensation and Benefits
+          {data?.Status}ed
+        </Typography>{" "}
+        the “
+        <Typography component="span" sx={Style.courseName}>
+          {selectedDocData?.name}
         </Typography>
         ” Quiz !
       </Typography>
@@ -81,7 +88,7 @@ const QuizResult = ({ open, setOpen, data }) => {
       >
         <Typography
           onClick={() => {
-            console.log(data);
+            console.log(questionsList);
           }}
           sx={Style.pointsHeading}
         >
@@ -96,7 +103,9 @@ const QuizResult = ({ open, setOpen, data }) => {
               height: { xs: "20px", sm: "28px" },
             }}
           />
-          <Typography sx={Style.pointNo}>300</Typography>
+          <Typography sx={Style.pointNo}>
+            {data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0}
+          </Typography>
           <Typography sx={Style.pointSymbol}>pts</Typography>
         </Box>
       </Box>
@@ -108,13 +117,17 @@ const QuizResult = ({ open, setOpen, data }) => {
             minWidth: { xs: "20%", sm: "auto" },
           }}
         >
-          <Typography sx={Style.questionNo}>20</Typography>
+          <Typography sx={Style.questionNo}>{length}</Typography>
           <Box>
             <Typography sx={Style.statisticHeading}>Questions</Typography>
           </Box>
         </Box>
         <Box sx={{ ...Style.statisticChildContainer, px: "0 !important" }}>
-          <Typography sx={Style.questionNo}>10</Typography>
+          <Typography sx={Style.questionNo}>
+            {(data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0) *
+              0.01 *
+              length}
+          </Typography>
           <Box
             sx={{
               display: "flex",
@@ -138,7 +151,11 @@ const QuizResult = ({ open, setOpen, data }) => {
           </Box>
         </Box>
         <Box sx={{ ...Style.statisticChildContainer, pl: "0 !important" }}>
-          <Typography sx={Style.questionNo}>07</Typography>
+          <Typography sx={Style.questionNo}>
+            {(100 - (data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0)) *
+              0.01 *
+              length}
+          </Typography>
           <Box
             sx={{
               display: "flex",

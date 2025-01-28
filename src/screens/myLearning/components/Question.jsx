@@ -268,6 +268,7 @@ const Question = ({ percentage, setPercentage }) => {
                 open={openResult}
                 setOpen={setOpenResult}
                 data={data}
+                questionsList={questionsList}
               />
               <ReuseModal
                 title={"Are you sure you want to submit quiz ?"}

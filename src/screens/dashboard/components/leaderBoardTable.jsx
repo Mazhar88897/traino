@@ -313,7 +313,7 @@ const LeaderBoardTable = ({ isDashboard }) => {
         backgroundColor: "#fff",
         mt: 2,
         overflow: "hidden",
-        width: { xs: "350px", sm: "100%", md: "100%", lg: "100%" },
+        width: { xs: "359.6px", sm: "100%", md: "100%", lg: "100%" },
         // height: { xs: "329px" },
         // mx: "10px",
       }}
