@@ -9,6 +9,7 @@ import { selectUser } from "./store/slice/user";
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
+  console.log("Environment Variables:", process.env);
   const theme = createTheme({
     palette: {
       primary: {

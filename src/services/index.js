@@ -12,6 +12,7 @@ export const customAxios = async (
   customHeader = {}
 ) => {
   console.log("working");
+  console.log("hello",process.env.REACT_APP_BASE_URL)
   let options = {
     method: method,
     url: `${process.env.REACT_APP_BASE_URL}${url}`,
@@ -34,6 +35,7 @@ export const customAxios = async (
   }
 
   try {
+    console.log(options)
     const res = await axios(options);
     return res;
   } catch (error) {
