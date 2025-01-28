@@ -44,9 +44,10 @@ const Style = {
   },
   donutPercentage: {
     color: "#1F1F1F",
+    mt: 1,
     textEdge: "cap",
     fontFamily: "Rubik",
-    fontSize: { xs: "16px", xl: "26px" },
+    fontSize: { xs: "24px", xl: "26px" },
     fontWeight: "600",
     letterSpacing: "-0.52px",
   },
