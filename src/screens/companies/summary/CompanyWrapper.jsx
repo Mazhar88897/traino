@@ -68,6 +68,9 @@ const CompanyWrapper = ({
   useEffect(() => {
     setActiveTab(section);
   }, [location]);
+  // useEffect(() => {
+  //   alert(percentage);
+  // }, [percentage]);
 
   const isActiveCondition = (val) => {
     const item = val?.tabName?.toLowerCase()?.replace(" ", "");
@@ -90,9 +93,10 @@ const CompanyWrapper = ({
           <Box
             component={"img"}
             sx={{
-              width: "23px",
-              height: "22px",
+              width: "20px",
+              height: "18px",
               display: { sm: "none", lg: "none", xl: "none" },
+              mr: "15px",
             }}
             src={IMAGES.whiteBack}
             onClick={() => {
@@ -154,7 +158,7 @@ const CompanyWrapper = ({
                     x="50%"
                     dy="0"
                   >
-                    {`${percentage}%`}
+                    {`${percentage.toFixed(0)}%`}
                   </Typography>
                 }
                 styles={buildStyles({
@@ -335,6 +339,7 @@ const CompanyWrapper = ({
           </Box>
         )}
       <Box
+        id="1111"
         sx={{
           display: "flex",
           justifyContent: "space-between",
@@ -394,6 +399,7 @@ const CompanyWrapper = ({
                         sx={{
                           width: { xs: "23.38px", sm: "30px", md: "30px" },
                           height: { xs: "23.38px", sm: "30px", md: "30px" },
+                          mr: "6px",
                         }}
                         component={"img"}
                         src={val.src}
@@ -438,7 +444,7 @@ const CompanyWrapper = ({
                     <Box
                       sx={{
                         display: "flex",
-                        gap: { xs: 1, sm: 2, md: 3 },
+                        gap: { xs: 0, sm: 2, md: 3 },
                         whiteSpace: "normal",
                       }}
                     >
@@ -468,7 +474,13 @@ const CompanyWrapper = ({
                             sx={{
                               color: "#1F1F1F",
                               fontFamily: "Rubik",
-                              fontSize: { xs: "22px", xl: "32px" },
+                              fontSize: {
+                                xs: "22px",
+                                sm: "22px",
+                                md: "22px",
+                                lg: "22px",
+                                xl: "32px",
+                              },
                               fontStyle: "normal",
                               fontWeight: "500",
                               width: "100%",
@@ -476,8 +488,20 @@ const CompanyWrapper = ({
                               overflow: "hidden",
                               textOverflow: "ellipsis",
                               whiteSpace: "nowrap",
-                              lineHeight: "42px",
-                              height: "42px",
+                              lineHeight: {
+                                xs: "26px",
+                                sm: "30px",
+                                md: "42px",
+                                lg: "42px",
+                                xl: "42px",
+                              },
+                              height: {
+                                xs: "24px",
+                                sm: "30px",
+                                md: "42px",
+                                lg: "42px",
+                                xl: "42px",
+                              },
                               display: "inline",
                             }}
                           >

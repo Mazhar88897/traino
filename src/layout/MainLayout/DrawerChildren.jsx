@@ -153,8 +153,18 @@ const DrawerChildren = ({ open, setOpenEditModal, setOpenLogoutModal }) => {
                       src={activeColor(path, successIcon) || icon}
                       alt="icon"
                       sx={{
-                        height: "24px",
-                        width: "24px",
+                        height: {
+                          xs: "24px",
+                          sm: "28px",
+                          lg: "28px",
+                          xl: "28px",
+                        },
+                        width: {
+                          xs: "24px",
+                          sm: "28px",
+                          lg: "28px",
+                          xl: "28px",
+                        },
                       }}
                     />
                   </ListItemIcon>
@@ -162,8 +172,8 @@ const DrawerChildren = ({ open, setOpenEditModal, setOpenLogoutModal }) => {
                     primaryTypographyProps={{
                       fontFamily: "Rubik",
                       fontWeight: activeColor(path, 500) || 400,
-                      // fontSize: width > 1535 ? 19 : 16,
-                      fontSize: 16,
+                      fontSize: width > 1535 ? 19 : 16,
+                      // fontSize: 16,
                     }}
                     primary={title}
                     sx={{ opacity: open ? 1 : 0 }}

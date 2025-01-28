@@ -1,5 +1,6 @@
 export const Style = {
   main: {
+    // mt: { xs: "20px", sm: "0px" },
     width: "100%",
     boxSizing: "border-box",
     display: "flex",
@@ -52,7 +53,7 @@ export const Style = {
     zIndex: 1,
     minHeight: { xs: "50px", md: "144px" },
     display: "flex",
-    gap: "16px",
+    // gap: "16px",
     alignItems: "center",
     // justifyContent: { xs: "space-between" },
     flexWrap: { xs: "nowrap", sm: "nowrap" },
@@ -64,14 +65,14 @@ export const Style = {
   trainingHeading: {
     color: "#FFF",
     fontFamily: "Rubik",
-    fontSize: { xs: "20px", sm: "25px", md: "28px" },
+    fontSize: { xs: "18px", sm: "25px", md: "28px" },
     fontWeight: "400",
     lineHeight: { xs: "24px", sm: "30px", md: "36px" },
   },
   trainingName: {
     color: "#FFF",
     fontFamily: "Rubik",
-    fontSize: { xs: "20px", sm: "25px", md: "28px" },
+    fontSize: { xs: "18px", sm: "25px", md: "28px" },
     fontWeight: "600",
     lineHeight: { xs: "24px", sm: "30px", md: "36px" },
     ml: 0.75,

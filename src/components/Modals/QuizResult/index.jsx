@@ -55,8 +55,8 @@ const QuizResult = ({ open, setOpen, data }) => {
           }}
         >
           <CircularProgressbar
-            value={data?.score || data?.Score || 0}
-            text={`${data?.score || data?.Score || 0}%`}
+            value={data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0}
+            text={`${data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0}%`}
             styles={buildStyles({
               rotation: 0.25,
               pathColor: `#3447D4`,
@@ -79,7 +79,14 @@ const QuizResult = ({ open, setOpen, data }) => {
           px: { xs: 1, sm: 3 },
         }}
       >
-        <Typography sx={Style.pointsHeading}>Your Points</Typography>
+        <Typography
+          onClick={() => {
+            console.log(data);
+          }}
+          sx={Style.pointsHeading}
+        >
+          Your Points
+        </Typography>
         <Box sx={{ display: "flex", alignItems: "center", gap: "6px" }}>
           <Box
             component={"img"}
@@ -125,7 +132,9 @@ const QuizResult = ({ open, setOpen, data }) => {
                 background: "#32C16B",
               }}
             />
-            <Typography sx={Style.statisticHeading}>Correct 30%</Typography>
+            <Typography sx={Style.statisticHeading}>
+              Correct {data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0}%
+            </Typography>
           </Box>
         </Box>
         <Box sx={{ ...Style.statisticChildContainer, pl: "0 !important" }}>
@@ -147,7 +156,10 @@ const QuizResult = ({ open, setOpen, data }) => {
                 background: "#EC2D30",
               }}
             />
-            <Typography sx={Style.statisticHeading}>Wrong 60%</Typography>
+            <Typography sx={Style.statisticHeading}>
+              Wrong{" "}
+              {100 - (data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0)}%
+            </Typography>
           </Box>
         </Box>
       </Box>

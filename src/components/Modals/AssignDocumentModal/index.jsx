@@ -42,6 +42,7 @@ const AssignDocumentModal = ({
   const [reminderValue, setReminderValue] = useState();
   const [department, setDepartment] = useState({});
   const { file, index, assigned_users, ...others } = editItem;
+  const [fileEmail, setFileEmail] = useState();
   // console.log(department);
   const [assignedDepartments, setAssignedDepartments] = useState([]);
   const [files, setFile] = useState(null);
@@ -53,7 +54,7 @@ const AssignDocumentModal = ({
   const [emailUserSelect, setEmailUserSelect] = useState([]);
   const { keyPoints } = useSelector(selectSummaryAndKeyPoints);
   const sendAssignRequest = async () => {
-    const url = `${process.env.REACT_APP_BASE_URL}/api/send-emails/`; // Replace with your API endpoint
+    const url = `${process.env.REACT_APP_BASE_URL}/send-emails/`; // Replace with your API endpoint
     const body = {
       emails: emailUserSelect,
     };
@@ -79,12 +80,16 @@ const AssignDocumentModal = ({
   };
 
   const sendReminderRequest = async () => {
-    const url = `${process.env.REACT_APP_BASE_URL}/api/reminder-send-emails/`; // Replace with your API endpoint
+    // console.log("file data", file);
+    const url = `${process.env.REACT_APP_BASE_URL}/reminder-send-emails/`; // Replace with your API endpoint
     const body = {
       emails: emailUserSelect,
-      schedule: "daily",
+      document_id: file.id,
+      doc_name: file.name,
+      date: file.updated_at,
+      // schedule: "daily",
     };
-
+    console.log("body", body);
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -296,6 +301,8 @@ const AssignDocumentModal = ({
       ? departmentIds
       : [departId];
     try {
+      // console.log("here is the data", updateData);
+      setFileEmail(file);
       setLoader(true);
       if (editItem) {
         const tempData = await updateDocuments(
@@ -333,8 +340,7 @@ const AssignDocumentModal = ({
         let isPresent = check + 1;
         if (!isPresent) dispatch(addDocument(tempData));
       }
-      console.log("yea hai :", updateData);
-      console.log("data payload : ", payload);
+
       // console.log("updated userdata list", userData);
       toast.success(
         `Document successfully ${!editItem ? "uploaded" : "updated"}`
@@ -678,12 +684,14 @@ const AssignDocumentModal = ({
                 //   item.email,
                 //   item.first_name,
                 // ]);
-                // console.log("departement   ggggg emails", emailUserSelect);
+
                 // handleEmailSubmit(e, emailUserSelect);
-                handlekeyponitsClick();
+                // handlekeyponitsClick();
+
+                handleSubmit();
+                console.log(fileEmail);
                 sendReminderRequest();
                 sendAssignRequest();
-                // handleSubmit();
               }}
               disable={
                 !!editItem

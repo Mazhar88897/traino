@@ -66,7 +66,8 @@ export const style = {
     fontFamily: "Rubik",
     fontSize: "16px",
     fontWeight: "500",
-    lineHeight: "36px",
+    lineHeight: "32px",
+    m: "4px 0px",
   },
   quizQuestions: {
     color: "#4156F9",
@@ -79,7 +80,7 @@ export const style = {
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
-    marginTop: 3,
+    marginTop: "5px",
   },
   instructionContainer: {
     display: "flex",

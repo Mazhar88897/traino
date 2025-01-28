@@ -14,7 +14,7 @@ export const globalStyle = {
     height: { xs: "100%", md: "100%" },
     maxHeight: { md: "59vw !important" },
     borderRadius: "24px",
-    p: { xs: "18px 0", sm: "12px 9px" },
+    p: { xs: "0", sm: "12px 9px" },
     pr: { sm: 0 },
     border: { md: "4px solid #D1C8FF" },
     background: "white",
@@ -31,7 +31,9 @@ export const globalStyle = {
   HeroBanner: (isSection, isFull, isTabShown) => ({
     ml: isTabShown ? { xs: "4px", sm: "-26px" } : 0,
     mx: isSection && !isTabShown && { xs: "auto", sm: "auto" },
-    pt: isSection ? { xs: "8px", sm: "12px", md: "12px" } : "34px",
+    pt: isSection
+      ? { xs: "0px", sm: "12px", md: "12px" }
+      : { xs: "15px", sm: "36px", md: "36px" },
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -116,7 +118,7 @@ export const globalStyle = {
     justifyContent: "start",
     flexGrow: 1,
     width: "100%",
-    gap: { xs: 1, sm: "10px", md: "13px" },
+    gap: { xs: 0, sm: "10px", md: "13px" },
     boxSizing: "border-box",
     flexWrap: "nowrap",
     pb: "5px",
@@ -124,18 +126,19 @@ export const globalStyle = {
   tabs: (isActive) => ({
     color: isActive ? "#3447D4" : "#1F1F1F",
     fontFamily: "Rubik",
-    fontSize: { xs: "16px", sm: "17px", md: "20px", xl: "24px" },
+    fontSize: { xs: "18px", sm: "17px", md: "20px", xl: "24px" },
     fontWeight: "400",
     // width: { xs: "70px", md: "100px" },
     minWidth: "fit-content",
-    pr: { xs: "8px", sm: "12px", md: "15px" },
+    mr: { xs: "10px", sm: "12px", md: "15px" },
+    ml: { xs: "-10px", sm: "0px" },
     // p: { xs: "6px 8px", md: "6px 11px" },
   }),
   tabsMain: (isTabs, isDrawer, isFull) => ({
     pl: isFull ? "5px" : 0,
     pr: isFull ? 8 : 0,
     width: {
-      xs: isFull ? "100%" : "calc(100vw - 55px)",
+      xs: isFull ? "100%" : "100%",
       sm: isFull
         ? "100%"
         : isDrawer
@@ -153,13 +156,14 @@ export const globalStyle = {
         : "calc(100vw - 180px)",
     },
     maxWidth: { xs: "1320px", xl: isTabs ? "1470px" : "1405px" },
-    margin: "0 auto",
+    margin: "0",
     whiteSpace: "nowrap",
     textOverflow: "ellipsis",
     display: "flex",
     overflow: !!isTabs ? "auto" : "hidden",
     scrollbarWidth: "none",
     justifyContent: "space-between",
+    mt: "12px",
   }),
   tabsTyp: {
     fontSize: { xs: "14px", md: "16px" },
