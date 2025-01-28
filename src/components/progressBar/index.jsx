@@ -26,15 +26,20 @@ const Dot = styled(Box)(({ active, color, radiusStyle, width, height }) => ({
   transition: "background-color 0.3s ease",
 }));
 
-const DottedProgressBar = ({ progress, dots, sx, width=14, height }) => {
+const DottedProgressBar = ({ progress, dots, sx, width = 14, height }) => {
   const totalDots = dots ? dots : 10; // Total number of dots in the progress bar
   const activeDots = Math.round((progress / 100) * totalDots); // Number of active dots based on progress
 
   return (
-    <Box display="flex" alignItems="center" justifyContent={'space-around'} gap={0} 
-    // minWidth={`${totalDots*width+0.4*width}px`} 
-    minWidth={`${(totalDots*width)+((width/5.5)*totalDots)}px`}
-    width={`${(totalDots*width)+((width/5.5)*totalDots)}px`}>
+    <Box
+      display="flex"
+      alignItems="center"
+      justifyContent={"space-around"}
+      gap={0}
+      // minWidth={`${totalDots*width+0.4*width}px`}
+      minWidth={`${totalDots * width + (width / 5.5) * totalDots}px`}
+      width={`${totalDots * width + (width / 5.5) * totalDots}px`}
+    >
       {[...Array(totalDots)].map((_, index) => {
         // Determine the border radius style for each dot
         let radiusStyle = "10%";
@@ -60,10 +65,16 @@ const DottedProgressBar = ({ progress, dots, sx, width=14, height }) => {
   );
 };
 
-export default function ProgressBar({dots, sx, width, height, progress}) {
+export default function ProgressBar({ dots, sx, width, height, progress }) {
   return (
     <Box sx={{ width: "100%" }}>
-      <DottedProgressBar width={width} height={height} sx={sx} dots={dots} progress={progress || 60} />{" "}
+      <DottedProgressBar
+        width={width}
+        height={height}
+        sx={sx}
+        dots={dots}
+        progress={progress || 60}
+      />{" "}
       {/* Adjust the progress value as needed */}
     </Box>
   );
