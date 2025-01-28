@@ -237,6 +237,7 @@ const CompanyWrapper = ({
           )} */}
         </Box>
       ) : (
+        // <></>
         <TopBanner
           headingNavigation={headingNavigation}
           heading={heading}
@@ -244,6 +245,7 @@ const CompanyWrapper = ({
           Icon={topBannerIcon}
           text={topBannerHeading}
         />
+        // <></>
       )}
       {!!isAdmin &&
         path[1] === "trainings" &&

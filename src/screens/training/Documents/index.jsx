@@ -271,7 +271,12 @@ const TrainingDocuments = () => {
     dispatch(addQuizAction({}));
   }, []);
   const tabs = [
-    { name: "All Trainings", id: 1 },
+    {
+      name: `All Trainings (${
+        !!documentsData?.results?.length >= 9 ? "0" : ""
+      }${documentsData?.results?.length || "0"})`,
+      id: 1,
+    },
     { name: "In Progress", id: 2 },
     { name: "Completed", id: 3 },
   ];
@@ -378,15 +383,17 @@ const TrainingDocuments = () => {
     >
       <>
         {isUser && (
+          // <></>
           <Box sx={Style.tabContainer}>
             <CustomTabs
               tabs={tabs}
               presentTab={presentTab}
               setPresentTab={handleSubDivision}
+              documentsData={documentsData}
             />
-            <Typography sx={Style.totalNo}>{`${
+            {/* <Typography sx={Style.totalNo}>{`${
               !!documentsData?.results?.length >= 9 ? "0" : ""
-            }${documentsData?.results?.length || "0"}`}</Typography>
+            }${documentsData?.results?.length || "0"}`}</Typography> */}
           </Box>
         )}
         {isAdmin && ((!!editItem && open) || !open) && (

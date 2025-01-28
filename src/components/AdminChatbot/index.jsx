@@ -172,7 +172,7 @@ const AdminChatbot = ({ loader, quizLoader, addQuiz, check }) => {
                 ))}
               </Box>
               <CustomButton
-                buttonText={step === 5 ? "Upload" : "Continue"}
+                buttonText={step === 5 ? "Publish Quiz" : "Continue"}
                 sx={Style.continueButton}
                 disable={!(step % 2)}
                 onClick={() => {
@@ -400,7 +400,7 @@ const AdminChatbot = ({ loader, quizLoader, addQuiz, check }) => {
         </Box>
       </Box>
       <ReuseModal
-        title={"Are you sure you want to upload quiz ?"}
+        title={"Are you sure you want to publish quiz ?"}
         open={open}
         setOpen={setOpen}
         onConfirm={() => {

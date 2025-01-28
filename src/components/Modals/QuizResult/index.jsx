@@ -124,9 +124,11 @@ const QuizResult = ({ open, setOpen, data, questionsList }) => {
         </Box>
         <Box sx={{ ...Style.statisticChildContainer, px: "0 !important" }}>
           <Typography sx={Style.questionNo}>
-            {(data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0) *
-              0.01 *
-              length}
+            {Math.round(
+              (data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0) *
+                0.01 *
+                length
+            )}
           </Typography>
           <Box
             sx={{
@@ -152,9 +154,12 @@ const QuizResult = ({ open, setOpen, data, questionsList }) => {
         </Box>
         <Box sx={{ ...Style.statisticChildContainer, pl: "0 !important" }}>
           <Typography sx={Style.questionNo}>
-            {(100 - (data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0)) *
-              0.01 *
-              length}
+            {Math.round(
+              (100 -
+                (data?.score?.toFixed(0) || data?.Score?.toFixed(0) || 0)) *
+                0.01 *
+                length
+            )}
           </Typography>
           <Box
             sx={{
