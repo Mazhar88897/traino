@@ -57,7 +57,17 @@ const PreviewCards = ({
   const { departId, id } = useParams();
   const location = useLocation();
   const path = location?.pathname?.split("/")[1];
-  const { heading, paragraph, date, name, users, is_quizzes } = data;
+  const {
+    heading,
+    paragraph,
+    date,
+    name,
+    users,
+    is_quizzes,
+    dueDate,
+    overview,
+    avgCompletionTime,
+  } = data;
   const [inputVal, setInputVal] = useState(editItem?.item?.name);
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
@@ -199,8 +209,17 @@ const PreviewCards = ({
   const year = dateShow.getFullYear();
 
   // Combine into the desired format
-  const dateShown = `${day}-0${month + 1}-${year}`;
+  const dateShown = dueDate || `${day}-0${month + 1}-${year}`;
+  const overviewShown =
+    overview ||
+    "Covers advanced pay and benefits strategies Focuses on  performance-based incentives";
   // const date = "hemlo";
+  function truncateText(text, limit) {
+    if (text.length > limit) {
+      return text.length > limit ? text.substring(0, limit) + "..." : text;
+    }
+    return text;
+  }
 
   return (
     <>
@@ -258,18 +277,18 @@ const PreviewCards = ({
               id={condition && "no_change"}
               onSubmit={submit}
               style={Style.title(path === "trainings" || isUser)}
-              onClick={(e) => condition && e.stopPropagation()}
+              // onClick={(e) => condition && e.stopPropagation()}
             >
               <Box sx={Style.departContentBox(isAdmin && !departId)}>
                 <Tooltip title={heading || name}>
                   <Typography
-                    onClick={handleClick}
+                    // onClick={handleClick}
                     sx={{
                       ...Style.pointerCusrsor,
                       ...Style.heading(path === "trainings" || !isAdmin),
                     }}
                   >
-                    {heading || name}
+                    {truncateText(heading || name, 30)}
                   </Typography>
                 </Tooltip>
               </Box>
@@ -327,8 +346,7 @@ const PreviewCards = ({
                 <>
                   <Typography sx={Style.spaceBetween}>
                     <Typography component={"span"} sx={Style.textdescript}>
-                      Covers advanced pay and benefits strategies Focuses on
-                      performance-based incentives
+                      {truncateText(overviewShown, 100)}
                     </Typography>
                   </Typography>
                   <Typography sx={{ ...Style.spaceBetween, mt: 1.5, mb: 1.5 }}>
@@ -386,7 +404,7 @@ const PreviewCards = ({
                       </Box>
                     )}
                   </Box>
-                  <Box
+                  {/* <Box
                     sx={{
                       width: "100%",
                       display: "flex",
@@ -405,7 +423,7 @@ const PreviewCards = ({
                       />
                       <Typography sx={Style.clocktext}>45 mins</Typography>
                     </Box>
-                  </Box>
+                  </Box> */}
                 </>
               )}
             </Box>

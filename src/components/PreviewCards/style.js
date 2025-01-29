@@ -20,7 +20,7 @@ export const Style = {
       xl: "325px",
     },
     minWidth: { xs: "200px", xl: "250px" },
-    cursor: "pointer",
+    // cursor: "pointer",
     display: "flex",
     boxShadow: "none",
     background: "#fff",
@@ -223,6 +223,7 @@ export const Style = {
     padding: "0px 12px",
     background: "#E9EFFD80",
     borderRadius: "5px",
+    cursor: "pointer",
   },
   estimatedtimetext: {
     fontFamily: "Rubik",

@@ -4,7 +4,7 @@ export const Style = {
     textAlign: "center",
     fontFamily: "Rubik",
     fontSize: {
-      xs: "18px",
+      xs: "16px",
       sm: "18px",
       md: "18px",
       XMLHttpRequest: "18px",

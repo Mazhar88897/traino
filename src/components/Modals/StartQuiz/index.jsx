@@ -13,6 +13,13 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
   const state = location?.state;
   const selectedDocData = state?.val;
 
+  function truncateText(text, limit) {
+    if (text.length > limit) {
+      return text.length > limit ? text.substring(0, limit) + "..." : text;
+    }
+    return text;
+  }
+
   return (
     <ModalWrapper open={!!open} setOpen={setOpen} sx={style.wrapper}>
       <Box sx={style.header}>
@@ -23,14 +30,23 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
           QUIZ {index >= 10 ? "" : "0"}
           {index + 1}
         </Typography>
-        <Typography sx={style.quizText}>{selectedDocData?.name}</Typography>
-        <Box sx={style.quizInfoContainer}>
+        <Typography sx={style.quizText}>
+          {truncateText(selectedDocData?.name, 27)}
+        </Typography>
+        {/* <Box sx={style.quizInfoContainer}>
           <Typography sx={style.quizQuestions}>10 Questions</Typography>
           <Box sx={style.clockMain}>
             <Box component={"img"} src={IMAGES.clock} width="19px" />
-            <Typography sx={style.quizQuestions}>20 Mins</Typography>
+            <Typography
+              onClick={() => {
+                console.log(selectedDocData);
+              }}
+              sx={style.quizQuestions}
+            >
+              20 Mins
+            </Typography>
           </Box>
-        </Box>
+        </Box> */}
       </Box>
       <Box sx={style.instructionContainer}>
         <Typography sx={style.instructionHeading}>Instructions</Typography>
@@ -49,7 +65,7 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
             Answers will not be saved if you go back.
           </Typography>
           <Typography component={"li"} sx={style.instruction}>
-            Click Submit at the end to finalize your answers.
+            Click Submit at the end to submit your answers.
           </Typography>
         </Box>
       </Box>

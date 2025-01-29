@@ -13,6 +13,7 @@ const QuizResult = ({ open, setOpen, data, questionsList }) => {
   const location = useLocation();
   const selectedDocData = location?.state?.val;
   const length = (questionsList || []).length;
+
   return (
     <ModalWrapper open={open} setOpen={setOpen} sx={Style.main}>
       <Box

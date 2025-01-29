@@ -528,9 +528,7 @@ const TrainingDocuments = () => {
               >
                 {documentsData?.results?.map((val, index) => (
                   <>
-                    {/* <button onClick={() => console.log(documentsData)}>
-                      click
-                    </button> */}
+                    {/* <button onClick={() => console.log(val)}>click</button> */}
                     <PreviewCards
                       isProgressBar={presentTab === 2}
                       isCompleted={presentTab === 3}

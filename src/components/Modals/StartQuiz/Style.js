@@ -100,9 +100,9 @@ export const style = {
   instruction: {
     color: "#000",
     fontFamily: "Rubik",
-    fontSize: { xs: "13px", sm: "16px" },
+    fontSize: { xs: "12px", sm: "16px" },
     fontWeight: "400",
-    lineHeight: { xs: "px", sm: "24px" },
+    lineHeight: { xs: "20px", sm: "24px" },
     mb: 1,
   },
   clockMain: {
@@ -111,6 +111,7 @@ export const style = {
     gap: "6px",
   },
   borderedContainer: {
+    justifyContent: "center", //to be removed
     display: "flex",
     flexDirection: "column",
     borderRadius: "12px",
