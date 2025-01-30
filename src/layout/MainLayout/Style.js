@@ -75,18 +75,21 @@ export const Style = {
     pb: 2,
     height: 90,
     borderBottom: "1px solid rgb(230, 230, 230)",
-    m: "0 20px",
+    m: "0 30px",
+    // mt: 1,
   },
   logo: (isDrawerOpen = false) => ({
     width: { xs: "54px", xl: isDrawerOpen ? "80px" : "54px" },
     height: { xs: "44px", xl: isDrawerOpen ? "54px" : "44px" },
+    // mt: "40px",
   }),
   logoPara: {
     color: "#151515",
     fontFamily: "Rubik",
     fontSize: { xs: "24px", sm: "28px", lg: "28px", xl: "28px" },
-    lineHeight: { xs: "28px", sm: "30px", lg: "32px", xl: "34px" },
+    lineHeight: { xs: "32px", sm: "30px", lg: "32px", xl: "34px" },
     fontWeight: "600",
+    mb: 1,
   },
   childrenWrapper: (isDrawerOpen, isFull, isLowPad, width) => ({
     minHeight: isFull ? "calc(100vh - 16px)" : "calc(100vh - 32px)",

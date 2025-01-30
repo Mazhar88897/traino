@@ -33,7 +33,7 @@ export const globalStyle = {
     mx: isSection && !isTabShown && { xs: "auto", sm: "auto" },
     pt: isSection
       ? { xs: "0px", sm: "12px", md: "12px" }
-      : { xs: "15px", sm: "36px", md: "36px" },
+      : { xs: "-5px", sm: "36px", md: "36px" },
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
