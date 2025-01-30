@@ -209,10 +209,12 @@ const PreviewCards = ({
   const year = dateShow.getFullYear();
 
   // Combine into the desired format
-  const dateShown = dueDate || `${day}-0${month + 1}-${year}`;
+  const dateShown = dueDate || `${year}-${month + 1}-${day}`;
   const overviewShown =
     overview ||
     "Covers advanced pay and benefits strategies Focuses on  performance-based incentives";
+
+  const avgCompletion = avgCompletionTime || "45";
   // const date = "hemlo";
   function truncateText(text, limit) {
     if (text.length > limit) {
@@ -263,12 +265,11 @@ const PreviewCards = ({
                 <Typography sx={Style.assignWhite}>Completed</Typography>
               </Box>
             )}
-            {/*
-            <Box sx={Style.bgAssignButton}>
-               <Typography sx={Style.assignBlack}> Due Date: </Typography>
-               <Typography sx={Style.assignblue}>{dateShown}</Typography>
-              <Typography sx={Style.date}>{dateShow}</Typography> 
-             
+
+            {/* <Box sx={Style.bgAssignButton}>
+              <Typography sx={Style.assignBlack}> Due Date: </Typography>
+              <Typography sx={Style.assignblue}>{dateShown}</Typography>
+              <Typography sx={Style.date}>{dateShow}</Typography>
             </Box> */}
           </Box>
 
@@ -288,7 +289,7 @@ const PreviewCards = ({
                       ...Style.heading(path === "trainings" || !isAdmin),
                     }}
                   >
-                    {truncateText(heading || name, 30)}
+                    {truncateText(heading || name, 20)}
                   </Typography>
                 </Tooltip>
               </Box>
@@ -346,7 +347,7 @@ const PreviewCards = ({
                 <>
                   <Typography sx={Style.spaceBetween}>
                     <Typography component={"span"} sx={Style.textdescript}>
-                      {truncateText(overviewShown, 100)}
+                      {truncateText(overviewShown, 70)}
                     </Typography>
                   </Typography>
                   <Typography sx={{ ...Style.spaceBetween, mt: 1.5, mb: 1.5 }}>
@@ -369,7 +370,7 @@ const PreviewCards = ({
                       sx={Style.linksOnPreviewCard}
                       onClick={() => handleClick("quizzes")}
                     >
-                      Quiz (02)
+                      Quiz
                     </Typography>
                     {/* <Typography
                       component={"a"}
@@ -404,7 +405,7 @@ const PreviewCards = ({
                       </Box>
                     )}
                   </Box>
-                  {/* <Box
+                  <Box
                     sx={{
                       width: "100%",
                       display: "flex",
@@ -421,9 +422,11 @@ const PreviewCards = ({
                         src={IMAGES.StopWatch}
                         sx={Style.StopWatch}
                       />
-                      <Typography sx={Style.clocktext}>45 mins</Typography>
+                      <Typography sx={Style.clocktext}>
+                        {avgCompletion} mins
+                      </Typography>
                     </Box>
-                  </Box> */}
+                  </Box>
                 </>
               )}
             </Box>

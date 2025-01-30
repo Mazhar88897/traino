@@ -232,36 +232,19 @@ const SignInFrom = () => {
           loading={loading}
           disable={formikValidation(formik)}
         />
-        <Typography
-          sx={{
-            display: "flex",
-            width: "100%",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "20px",
-            mt: 1,
-          }}
-        >
+        {/* <Typography sx={{ display: 'flex', width: "100%", alignItems: 'center', justifyContent: 'center', gap: '20px', mt: 1 }}>
           <Box component={"span"} sx={Style.bordered} />
           <Typography component={"span"} sx={Style.or}>
             OR
           </Typography>
           <Box component={"span"} sx={Style.bordered} />
         </Typography>
-        <Button
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "6px",
-            cursor: "pointer",
-            mt: 1,
-          }}
-        >
+        <Button sx={{ display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer', mt: 1 }}>
           <FcGoogle size={21} />
           <Typography component={"span"} sx={Style.googlePara}>
             Continue with google
           </Typography>
-        </Button>
+        </Button> */}
       </Box>
     </Box>
   );

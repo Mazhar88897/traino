@@ -31,9 +31,9 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
           {index + 1}
         </Typography>
         <Typography sx={style.quizText}>
-          {truncateText(selectedDocData?.name, 27)}
+          {truncateText(selectedDocData?.name, 22)}
         </Typography>
-        {/* <Box sx={style.quizInfoContainer}>
+        <Box sx={style.quizInfoContainer}>
           <Typography sx={style.quizQuestions}>10 Questions</Typography>
           <Box sx={style.clockMain}>
             <Box component={"img"} src={IMAGES.clock} width="19px" />
@@ -43,10 +43,10 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
               }}
               sx={style.quizQuestions}
             >
-              20 Mins
+              {selectedDocData?.avgCompletionTime || 45} mins
             </Typography>
           </Box>
-        </Box> */}
+        </Box>
       </Box>
       <Box sx={style.instructionContainer}>
         <Typography sx={style.instructionHeading}>Instructions</Typography>

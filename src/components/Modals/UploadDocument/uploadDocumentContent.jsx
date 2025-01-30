@@ -70,7 +70,7 @@ const UploadDocumentContent = ({
   };
   const handleDateChange = (newDate) => {
     // Format the date as MM/DD/YYYY
-    const formattedDate = newDate ? dayjs(newDate).format("MM/DD/YYYY") : "";
+    const formattedDate = newDate ? dayjs(newDate).format("YYYY-MM-DD") : "";
     // console.log("formattedDate", formattedDate);
     setDueDate(formattedDate);
   };

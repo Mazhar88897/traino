@@ -139,6 +139,8 @@ export const Style = {
     fontWeight: "400",
     lineHeight: "24px",
     px: "-3px",
+    // background: "black",
+    height: "60px",
   },
   heading: (isDoc) => ({
     fontFamily: "Rubik",
@@ -192,6 +194,7 @@ export const Style = {
   },
   spaceBetween: {
     display: "flex",
+    // background: "black",
     // alighn:
     // justifyContent: "center",
     alignItems: "left",

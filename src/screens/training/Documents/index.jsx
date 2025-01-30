@@ -290,7 +290,7 @@ const TrainingDocuments = () => {
   };
 
   const submit = async () => {
-    alert("hello");
+    // alert("hello");
     const payload = new FormData();
     payload.append("overview", overview);
     payload.append("avgCompletionTime", avgCompletionTime);
@@ -320,6 +320,7 @@ const TrainingDocuments = () => {
         dueDate: dueDate,
         avgCompletionTime: avgCompletionTime,
       };
+      console.log(tempData);
       dispatch(addDocument(tempData));
       documentGet(true);
       setOpen(false);
@@ -528,7 +529,6 @@ const TrainingDocuments = () => {
               >
                 {documentsData?.results?.map((val, index) => (
                   <>
-                    {/* <button onClick={() => console.log(val)}>click</button> */}
                     <PreviewCards
                       isProgressBar={presentTab === 2}
                       isCompleted={presentTab === 3}
