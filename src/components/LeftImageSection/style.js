@@ -5,7 +5,7 @@ export const Style = {
     width: { xs: "100%", md: "65.7%" },
     height: { xs: "40%", md: "100%" },
     maxWidth: "820px",
-
+    mt: { xs: "20px", sm: "20px", md: 0 },
     backgroundColor: "white",
     boxSizing: "border-box",
     display: { xs: "flex", md: "flex" },
@@ -15,7 +15,7 @@ export const Style = {
   },
   content: {
     // background: "black",
-    width: { xs: "115%", md: "100%" },
+    width: { xs: "100%", md: "100%" },
     height: { xs: "100%", md: "100%" },
     backgroundRepeat: "no-repeat",
     borderRadius: { xs: "4px", md: "22px" },
@@ -25,6 +25,12 @@ export const Style = {
       lg: `url(${IMAGES.leftbanner})`,
       xl: `url(${IMAGES.leftbanner})`,
     },
+    backgroundSize: { 
+      xs: "cover",
+      sm: "cover",
+      md: "cover" 
+    },
+    backgroundPosition: "center",
     boxShadow: {
       xs: "",
       sm: "0px 14px 60px 0px rgba(0, 0, 0, 0.25)",
@@ -32,7 +38,6 @@ export const Style = {
       md: "0px 14px 60px 0px rgba(0, 0, 0, 0.25)",
       xl: "0px 14px 60px 0px rgba(0, 0, 0, 0.25)",
     },
-    backgroundSize: "100% 100%",
     backgroundColor: {
       xs: "",
       sm: "#050505",
