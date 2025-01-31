@@ -103,6 +103,10 @@ const QuizSection = ({ loader }) => {
             sx={{
               ...Style.customCardWrapper(isUser, width, drawer),
               alignContent: "start",
+              display: 'grid',
+              gridTemplateColumns: width <= 600 ? 'repeat(2, 1fr)' : 'repeat(auto-fill, minmax(250px, 1fr))',
+              gap: width <= 600 ? '20px 15px' : '15px',
+              width: '100%'
             }}
           >
             {quizzezList?.map((item, index) => {
@@ -145,7 +149,7 @@ const QuizSection = ({ loader }) => {
                   item={item}
                   heading={`Quiz ${index + 1}`}
                   uploadStatus={upload_status}
-                  subHeading={`"Let’s create an engaging, interactive quiz!”`}
+                  subHeading={`"Let's create an engaging, interactive quiz!"`}
                   key={index}
                   onDeleteClick={() => setQuizId(item?.id)}
                   subHeadingStyle={{
