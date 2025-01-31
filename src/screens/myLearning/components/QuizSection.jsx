@@ -131,6 +131,7 @@ const QuizSection = ({ loader }) => {
                     onResultClick({ ...item, index, upload_status })
                   }
                   sx={Style.userQuizCard(width, drawer)}
+                  data={data}
                 />
               ) : (
                 <UserQuizCard
@@ -164,6 +165,7 @@ const QuizSection = ({ loader }) => {
               open={selectedItem}
               setOpen={setSelectedItem}
               onConfirm={onConfirm}
+              data={data}
             />
             <ReuseModal
               title={"Are you sure you want to delete quiz ?"}

@@ -7,7 +7,7 @@ import { style } from "./Style";
 import { IMAGES } from "../../../theme";
 import { useLocation } from "react-router-dom";
 
-const StartQuizModal = ({ open, setOpen, onConfirm }) => {
+const StartQuizModal = ({ open, setOpen, onConfirm, data }) => {
   const { result_status, score, attempt_status, index } = open;
   const location = useLocation();
   const state = location?.state;
@@ -34,7 +34,7 @@ const StartQuizModal = ({ open, setOpen, onConfirm }) => {
           {truncateText(selectedDocData?.name, 22)}
         </Typography>
         <Box sx={style.quizInfoContainer}>
-          <Typography sx={style.quizQuestions}>10 Questions</Typography>
+          <Typography sx={style.quizQuestions}>Average Time</Typography>
           <Box sx={style.clockMain}>
             <Box component={"img"} src={IMAGES.clock} width="19px" />
             <Typography
