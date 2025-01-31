@@ -115,8 +115,8 @@ const QuizSection = ({ loader }) => {
               const { score, result_status, upload_status } = item;
               return isUser ? (
                 <UserQuizCard
-                  // onClick={() => handleClick({ ...item, index })}
-                  onClick={() => console.log(item)}
+                  onClick={() => handleClick({ ...item, index })}
+                  // onClick={() => console.log(item)}
                   heading={`QUIZ ${index < 9 ? "0" : ""}${index + 1}`}
                   subHeading={
                     <>
