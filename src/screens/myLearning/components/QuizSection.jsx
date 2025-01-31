@@ -22,13 +22,12 @@ import { IMAGES } from "../../../theme";
 import QuizResult from "../../../components/Modals/QuizResult";
 import useWindowDimensions from "../../../hooks/windowDimensions";
 import { selectdrawer } from "../../../store/slice/drawer";
-
+// import { useLocation } from "react-router-dom";
 const QuizSection = ({ loader }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { id, docId, departId } = useParams();
-  const location = useLocation();
-  const state = location?.state;
+
   const [deleteloader, setDeleteLoader] = useState(false);
   const [quizId, setQuizId] = useState(false);
   const { access, isUser, isSuperAdmin, isAdmin } = useSelector(selectUser);
@@ -38,6 +37,9 @@ const QuizSection = ({ loader }) => {
   const [data, setData] = useState(false);
   const { width } = useWindowDimensions();
   const { drawer } = useSelector(selectdrawer);
+  const location = useLocation();
+  const state = location?.state;
+  const selectedDocData = state?.val;
 
   const onConfirm = () => {
     navigate(`/my-learning/document/${docId}/attemptQuiz`, {
@@ -109,12 +111,21 @@ const QuizSection = ({ loader }) => {
               const { score, result_status, upload_status } = item;
               return isUser ? (
                 <UserQuizCard
-                  onClick={() => handleClick({ ...item, index })}
+                  // onClick={() => handleClick({ ...item, index })}
+                  onClick={() => console.log(item)}
                   heading={`QUIZ ${index < 9 ? "0" : ""}${index + 1}`}
                   subHeading={
                     <>
-                      “You have <strong>20 mins</strong> to complete{" "}
-                      <strong>10 questions</strong>”
+                      “You have{" "}
+                      <strong>
+                        {" "}
+                        {selectedDocData?.avgCompletionTime || 45} mins
+                      </strong>{" "}
+                      to complete{" "}
+                      <strong>{`QUIZ ${index < 9 ? "0" : ""}${
+                        index + 1
+                      }`}</strong>
+                      ”
                     </>
                   }
                   item={item}
