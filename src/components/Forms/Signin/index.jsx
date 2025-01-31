@@ -146,7 +146,7 @@ const SignInFrom = () => {
           Please login details below to using the app
         </Typography>
         <FormControl
-          sx={{ ...Style.formControl, m: "44px 0 12px 0" }}
+          sx={{ ...Style.formControl, m: "24px 0 12px 0" }}
           variant="outlined"
         >
           <InputLabel htmlFor="email" sx={Style.inputLabel}>

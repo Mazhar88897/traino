@@ -9,8 +9,18 @@ const SignIn = () => {
   const { width, height } = useWindowDimensions();
   return (
     <Box sx={globalStyle.main}>
-      <Box sx={{...globalStyle.container, p: 0, border: {md: 0}, maxHeight: {md: '765px'}, alignItems: 'center', justifyContent: 'center', background: 'none', maxWidth: '1260px' }}>
-        <Box sx={globalStyle.container}>
+      <Box sx={{
+        ...globalStyle.container, 
+        p: 0, 
+        border: {md: 0}, 
+        maxHeight: {md: '765px'}, 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        background: 'none', 
+        maxWidth: '1260px',
+        mt: { xs: '20px', sm: 0 }
+      }}>
+        <Box sx={{...globalStyle.container}}>
           <LeftImageSection />
           <Box sx={globalStyle.formContainer(width, height)}>
             <SignInFrom />
